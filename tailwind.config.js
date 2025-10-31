@@ -1,10 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
-  content: [
-    "./src/**/*.{ts,tsx}",
-    "./index.html",
-  ],
+  content: ["./src/**/*.{ts,tsx}", "./index.html"],
   prefix: "",
   theme: {
     container: {
@@ -48,6 +45,18 @@ export default {
         card: {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
+        },
+        success: {
+          DEFAULT: "#16a34a", // green-600
+          foreground: "#f0fdf4",
+        },
+        warning: {
+          DEFAULT: "#f59e0b", // orange-500
+          foreground: "#fffbeb",
+        },
+        error: {
+          DEFAULT: "#ef4444", // red-500
+          foreground: "#fef2f2",
         },
       },
       borderRadius: {

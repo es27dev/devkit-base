@@ -1,47 +1,31 @@
-import { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-import { Button } from "@/components/base/button";
-import {
-  ResizablePanelGroup,
-  ResizablePanel,
-  ResizableHandle,
-} from "@/components/base/resizable";
+import Navbar from "@/components/base/navbar/navbar";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Career from "@/pages/Career";
+import Sales from "@/pages/Sales";
 
-export function ResizableHandleDemo() {
-  return (
-    <ResizablePanelGroup
-      direction="horizontal"
-      className="min-h-[200px] max-w-md rounded-lg border md:min-w-[450px]"
-    >
-      <ResizablePanel defaultSize={40}>
-        <div className="flex h-full items-center justify-center p-6">
-          <span className="font-semibold">Formular</span>
-        </div>
-      </ResizablePanel>
-      <ResizableHandle withHandle />
-      <ResizablePanel defaultSize={60}>
-        <div className="flex h-full items-center justify-center p-6">
-          <span className="font-semibold">PDF-Preview</span>
-        </div>
-      </ResizablePanel>
-    </ResizablePanelGroup>
-  );
-}
+import { cn } from "@/utils";
 
-//<ResizableHandleDemo className="flex flex-1" /> <ResizableHandleDemo />{" "}
-//<ResizableHandleDemo />
+const devTailwind = {
+  WebScreen: "min-h-screen grid grid-rows-[auto_1fr] bg-background",
+  WebMain: "w-full max-w-[1400px] mx-auto p-4 sm:p-6 lg:p-8 overflow-auto",
+};
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="h-screen w-full border-2 border-green-500 grid grid-rows-[20%_80%]">
-      <div className="border-2 border-yellow-500">Header</div>
-      <div className="w-full border-2 border-red-500 grid grid-cols-3">
-        <div className="h-full border-2 border-blue-500">LeftCol</div>
-        <div className="h-full border-2 border-blue-500">CenterCol</div>
-        <div className="h-full border-2 border-blue-500">RightCol</div>
-      </div>
+    <div className={cn(devTailwind.WebScreen)}>
+      <Navbar />
+      <main className={cn(devTailwind.WebMain)}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/mehr-erfahren" element={<About />} />
+          <Route path="/karriere" element={<Career />} />
+          <Route path="/vertrieb" element={<Sales />} />
+        </Routes>
+      </main>
     </div>
   );
 }
