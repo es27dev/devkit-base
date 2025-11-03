@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+import { cn } from "@/shared/lib/utils";
 export const Logo = () => (
   <svg width="124" height="32">
     ...

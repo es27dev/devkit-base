@@ -1,46 +1,93 @@
+/* PACON Real Estate GmbH Brand Colors
+   Logo Colors (exact from SVG):
+   - Red: #98221F
+   - DarkGray: #3C3C3B
+   - LightGray: #9C9B9B
+   - Black: #1D1D1B
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --card: #ffffff;
-  --card-foreground: #0a0a0a;
+  /* Base Colors - Light Mode (Warm Beige/Cream) */
+  --background: #faf8f5;        /* Warm off-white background */
+  --foreground: #1d1d1b;        /* Logo black for text */
+  --card: #ffffff;              /* Pure white cards */
+  --card-foreground: #1d1d1b;   /* Logo black */
   --popover: #ffffff;
-  --popover-foreground: #0a0a0a;
-  --primary: #737373;
-  --primary-foreground: #fafafa;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #0a0a0a;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --accent: #f5f5f5;
-  --accent-foreground: #0a0a0a;
-  --destructive: #dc2626;
-  --destructive-foreground: #fafafa;
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --ring: #737373;
+  --popover-foreground: #1d1d1b;
+
+  /* Primary - PACON Red (slightly desaturated to avoid logo clash) */
+  --primary: #a63631;           /* Slightly lighter red (not logo-exact) */
+  --primary-foreground: #faf8f5;
+
+  /* Secondary - Warm neutrals */
+  --secondary: #f5f2ed;         /* Warm light gray */
+  --secondary-foreground: #3c3c3b; /* Logo dark gray */
+
+  /* Muted - Subtle backgrounds */
+  --muted: #f0ece6;             /* Warmer muted background */
+  --muted-foreground: #6b6b6a;  /* Between logo gray shades */
+
+  /* Accent - Warm complement to red */
+  --accent: #f5f2ed;
+  --accent-foreground: #3c3c3b;
+
+  /* Semantic Colors */
+  --destructive: #7c3aed;       /* Violet-600 (distinct from PACON red) */
+  --destructive-foreground: #faf8f5;
+  --success: #4a7c59;           /* Professional green */
+  --success-foreground: #faf8f5;
+  --warning: #d97706;           /* Amber warning */
+  --warning-foreground: #1d1d1b;
+  --info: #0369a1;              /* Professional blue */
+  --info-foreground: #faf8f5;
+
+  /* Borders & Inputs */
+  --border: #e0dcd5;            /* Warm border */
+  --input: #e0dcd5;
+  --ring: #a63631;              /* Primary red for focus rings */
+
   --radius: 0.5rem;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #0a0a0a;
-  --card-foreground: #fafafa;
-  --popover: #0a0a0a;
-  --popover-foreground: #fafafa;
-  --primary: #737373;
-  --primary-foreground: #0a0a0a;
-  --secondary: #262626;
-  --secondary-foreground: #fafafa;
-  --muted: #262626;
-  --muted-foreground: #a3a3a3;
-  --accent: #262626;
-  --accent-foreground: #fafafa;
-  --destructive: #dc2626;
-  --destructive-foreground: #fafafa;
-  --border: #262626;
-  --input: #262626;
-  --ring: #737373;
+  /* Base Colors - Dark Mode (Dark Gray Base) */
+  --background: #2a2a29;        /* Slightly lighter than logo dark gray */
+  --foreground: #f5f2ed;        /* Warm off-white text */
+  --card: #3c3c3b;              /* Logo dark gray for cards */
+  --card-foreground: #f5f2ed;
+  --popover: #3c3c3b;
+  --popover-foreground: #f5f2ed;
+
+  /* Primary - PACON Red (slightly brighter for dark bg) */
+  --primary: #b13d38;           /* Brighter red for dark mode (not logo-exact) */
+  --primary-foreground: #f5f2ed;
+
+  /* Secondary - Dark neutrals */
+  --secondary: #4a4a48;         /* Lighter than card */
+  --secondary-foreground: #f5f2ed;
+
+  /* Muted - Dark subtle backgrounds */
+  --muted: #4a4a48;
+  --muted-foreground: #9c9b9b;  /* Logo light gray */
+
+  /* Accent */
+  --accent: #4a4a48;
+  --accent-foreground: #f5f2ed;
+
+  /* Semantic Colors (adjusted for dark mode) */
+  --destructive: #a855f7;       /* Purple-500 (brighter for dark bg) */
+  --destructive-foreground: #f5f2ed;
+  --success: #5d9b6d;           /* Brighter green */
+  --success-foreground: #f5f2ed;
+  --warning: #f59e0b;           /* Brighter amber */
+  --warning-foreground: #1d1d1b;
+  --info: #3b82f6;              /* Brighter blue */
+  --info-foreground: #f5f2ed;
+
+  /* Borders & Inputs */
+  --border: #4a4a48;
+  --input: #4a4a48;
+  --ring: #b13d38;              /* Primary red for focus */
 }
 
 @tailwind base;

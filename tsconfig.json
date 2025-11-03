@@ -26,5 +26,8 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "src/components/features/invoice-form/lib/validation/number.ts"
+  ]
 }

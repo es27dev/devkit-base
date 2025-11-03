@@ -1,0 +1,53 @@
+{
+  "step_id": "1.2",
+  "step_name": "Orchestrator Initial Dialog",
+  "agent": "orchestrator",
+  "behavior_mode": "Socratic Dialog Mode",
+  "description": "Orchestrator refines function description through dialog and creates database record",
+
+  "inputs": {
+    "user_story_description": null
+  },
+
+  "context_reads": [
+    "constitution.md",
+    "CLAUDE.md"
+  ],
+
+  "loops": {
+    "type": "user_approval_loop",
+    "max_iterations": null,
+    "iterations": 0,
+    "loop_data_per_iteration": [],
+    "exit_condition": "user approval"
+  },
+
+  "database_operations": {
+    "create_project_function": {
+      "project_id": null,
+      "name": null,
+      "description": null,
+      "slug": null,
+      "status_speckit": null,
+      "status_agent": "orchestrator",
+      "spec_metadata": null,
+      "plan_metadata": null,
+      "plan_artifacts_metadata": null,
+      "tasks_metadata": null,
+      "implementation_metadata": null
+    }
+  },
+
+  "outputs": {
+    "function_id": null,
+    "function_name": null,
+    "function_description": null,
+    "function_slug": null,
+    "agent_spawned": null
+  },
+
+  "status": "pending",
+  "started_at": null,
+  "completed_at": null,
+  "duration_minutes": null
+}

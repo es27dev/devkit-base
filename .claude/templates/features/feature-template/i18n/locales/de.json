@@ -1,0 +1,12 @@
+{
+  "feature": {
+    "title": "Feature Title",
+    "items": [
+      {
+        "id": "item1",
+        "name": "Item Name",
+        "description": "Item Description"
+      }
+    ]
+  }
+}

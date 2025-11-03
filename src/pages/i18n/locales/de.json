@@ -1,0 +1,17 @@
+{
+  "sales": {
+    "hero": {
+      "title": "Vertrieb & Beratung",
+      "subtitle": "Wir bringen Ihre Immobilie auf das nächste Level",
+      "description": "Mit jahrzehntelanger Erfahrung im Facility Management bieten wir maßgeschneiderte Lösungen für Ihre Immobilie."
+    },
+    "intro": {
+      "headline": "Ihre Partner für professionelles Facility Management",
+      "text": [
+        "Seit über 30 Jahren sind wir Ihr verlässlicher Partner im Bereich Facility Management. Unser Team aus erfahrenen Experten sorgt dafür, dass Ihre Immobilie optimal betrieben wird.",
+        "Von der technischen Wartung bis zur infrastrukturellen Betreuung – wir bieten Ihnen alle Leistungen aus einer Hand.",
+        "Kontaktieren Sie uns noch heute für ein unverbindliches Beratungsgespräch."
+      ]
+    }
+  }
+}
