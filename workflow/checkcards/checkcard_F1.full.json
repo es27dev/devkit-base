@@ -1,0 +1,43 @@
+{
+  "stepF1": {
+    "step_index": 7,
+    "step_name": "Planner Tasks Phase",
+    "agent": "planner",
+    "description": "Planner breaks down plan into actionable tasks",
+    "inputs": {
+      "plan_file_path": ".specify/plans/001-user-profile/plan.md"
+    },
+    "outputs": {
+      "tasks_json": [
+        {
+          "task_id": "T1",
+          "description": "Create user profile component with form fields",
+          "is_parallel": false,
+          "dependencies": null,
+          "mvp": true,
+          "phase": "pending",
+          "status": "pending"
+        },
+        {
+          "task_id": "T2",
+          "description": "Implement avatar upload functionality",
+          "is_parallel": true,
+          "dependencies": null,
+          "mvp": true,
+          "phase": "pending",
+          "status": "pending"
+        },
+        {
+          "task_id": "T3",
+          "description": "Connect profile form to Supabase",
+          "is_parallel": false,
+          "dependencies": ["T1"],
+          "mvp": true,
+          "phase": "pending",
+          "status": "pending"
+        }
+      ],
+      "task_file_path": ".specify/tasks/001-user-profile/tasks.json"
+    }
+  }
+}

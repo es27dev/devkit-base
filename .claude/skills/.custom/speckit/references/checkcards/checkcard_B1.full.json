@@ -1,0 +1,14 @@
+{
+  "stepB1": {
+    "step_index": 3,
+    "step_name": "Planner Specify Phase",
+    "agent": "planner",
+    "description": "Planner researches codebase and executes speckit.specify",
+    "inputs": {
+      "user_story": "Als Benutzer möchte ich mein Profil bearbeiten können, damit ich meine persönlichen Daten aktuell halten kann. Das umfasst Name, Email, Bio und Profilbild."
+    },
+    "outputs": {
+      "spec_file_path": ".specify/specs/001-user-profile/spec.md"
+    }
+  }
+}

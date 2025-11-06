@@ -1,0 +1,9 @@
+{
+  "inputs": {
+    "spec_file_path": ".specify/specs/001-user-profile/spec.md"
+  },
+  "outputs": {
+    "user_approved_spec": true,
+    "spec_file_path": ".specify/specs/001-user-profile/spec.md"
+  }
+}

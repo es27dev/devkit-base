@@ -1,0 +1,16 @@
+{
+  "stepE1": {
+    "step_index": 6,
+    "step_name": "Orchestrator Plan Review Phase",
+    "agent": "orchestrator",
+    "description": "Orchestrator reviews plan and gets user approval",
+    "inputs": {
+      "plan_file_path": ".specify/plans/001-user-profile/plan.md",
+      "plan_analyze_summary_path": ".specify/plans/001-user-profile/analyze.md"
+    },
+    "outputs": {
+      "user_approved_plan": true,
+      "plan_summary_path": ".specify/plans/001-user-profile/plan.md"
+    }
+  }
+}

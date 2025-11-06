@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Checkcard E1 - AI Schema",
+  "description": "Schema for Step E1: Orchestrator Plan Review Phase",
+  "type": "object",
+  "required": ["inputs", "outputs"],
+  "properties": {
+    "inputs": {
+      "type": "object",
+      "required": ["plan_file_path", "plan_analyze_summary_path"],
+      "properties": {
+        "plan_file_path": {
+          "type": "string",
+          "description": "Path to plan file from Step D1"
+        },
+        "plan_analyze_summary_path": {
+          "type": "string",
+          "description": "Path to plan analysis summary from Step D1"
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "required": ["user_approved_plan", "plan_summary_path"],
+      "properties": {
+        "user_approved_plan": {
+          "type": "boolean",
+          "description": "Whether user approved the plan"
+        },
+        "plan_summary_path": {
+          "type": "string",
+          "description": "Path to the (possibly updated) plan file"
+        }
+      }
+    }
+  }
+}

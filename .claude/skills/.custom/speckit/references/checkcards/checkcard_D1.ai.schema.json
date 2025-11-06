@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Checkcard D1 - AI Schema",
+  "description": "Schema for Step D1: Planner Plan Phase",
+  "type": "object",
+  "required": ["inputs", "outputs"],
+  "properties": {
+    "inputs": {
+      "type": "object",
+      "required": ["spec_file_path"],
+      "properties": {
+        "spec_file_path": {
+          "type": "string",
+          "description": "Path to spec file from Step C1"
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "required": ["plan_file_path", "plan_analyze_summary_path", "research_path", "data_model_path", "contracts_path", "quickstart_path"],
+      "properties": {
+        "plan_file_path": {
+          "type": "string",
+          "description": "Path to main plan file"
+        },
+        "plan_analyze_summary_path": {
+          "type": "string",
+          "description": "Path to plan analysis summary"
+        },
+        "research_path": {
+          "type": "string",
+          "description": "Path to research document"
+        },
+        "data_model_path": {
+          "type": "string",
+          "description": "Path to data model document"
+        },
+        "contracts_path": {
+          "type": "string",
+          "description": "Path to contracts directory"
+        },
+        "quickstart_path": {
+          "type": "string",
+          "description": "Path to quickstart guide"
+        }
+      }
+    }
+  }
+}

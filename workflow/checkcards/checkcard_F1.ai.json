@@ -1,0 +1,31 @@
+{
+  "inputs": {
+    "plan_file_path": ".specify/plans/001-user-profile/plan.md"
+  },
+  "outputs": {
+    "tasks_json": [
+      {
+        "task_id": "T1",
+        "description": "Create user profile component with form fields",
+        "is_parallel": false,
+        "dependencies": null,
+        "mvp": true
+      },
+      {
+        "task_id": "T2",
+        "description": "Implement avatar upload functionality",
+        "is_parallel": true,
+        "dependencies": null,
+        "mvp": true
+      },
+      {
+        "task_id": "T3",
+        "description": "Connect profile form to Supabase",
+        "is_parallel": false,
+        "dependencies": ["T1"],
+        "mvp": true
+      }
+    ],
+    "task_file_path": ".specify/tasks/001-user-profile/tasks.json"
+  }
+}

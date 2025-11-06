@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Checkcard F1 - AI Schema",
+  "description": "Schema for Step F1: Planner Tasks Phase",
+  "type": "object",
+  "required": ["inputs", "outputs"],
+  "properties": {
+    "inputs": {
+      "type": "object",
+      "required": ["plan_file_path"],
+      "properties": {
+        "plan_file_path": {
+          "type": "string",
+          "description": "Path to plan file from Step E"
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "required": ["tasks_json", "task_file_path"],
+      "properties": {
+        "tasks_json": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["task_id", "description", "is_parallel", "dependencies", "mvp"],
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "description": "Unique task identifier"
+              },
+              "description": {
+                "type": "string",
+                "description": "Task description"
+              },
+              "is_parallel": {
+                "type": "boolean",
+                "description": "Can this task run in parallel with others"
+              },
+              "dependencies": {
+                "oneOf": [
+                  {"type": "null"},
+                  {
+                    "type": "array",
+                    "items": {"type": "string"}
+                  }
+                ],
+                "description": "Task IDs this task depends on (null or string array)"
+              },
+              "mvp": {
+                "type": "boolean",
+                "description": "Is this task part of the MVP phase"
+              }
+            }
+          },
+          "description": "Array of task objects"
+        },
+        "task_file_path": {
+          "type": "string",
+          "pattern": "^\.specify/.*\.json$",
+          "description": "Path where tasks will be saved"
+        }
+      }
+    }
+  }
+}
