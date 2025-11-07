@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/shared/lib/utils";
 
 interface CountingNumberProps {

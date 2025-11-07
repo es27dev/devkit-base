@@ -1,9 +1,114 @@
 {
+  "main": {
+    "hero": {
+      "title": "pacon Real Estate – Wir kümmern uns um die Technik",
+      "subtitle": "Betrieb, Instandhaltung, Services. Messbar besser.",
+      "primaryCta": "Angebot anfordern",
+      "secondaryCta": "Jetzt bewerben"
+    },
+    "services": {
+      "title": "Unsere Kernleistungen",
+      "description": "Professionelles Facility Management mit messbar besseren Ergebnissen",
+      "service1": {
+        "title": "Technisches FM",
+        "description": "Wartung und Instandhaltung technischer Anlagen"
+      },
+      "service2": {
+        "title": "Infrastrukturelle Services",
+        "description": "Reinigung, Sicherheit und Empfangsdienste"
+      },
+      "service3": {
+        "title": "Betreiberverantwortung & Compliance",
+        "description": "Rechtssichere Betriebsführung und Dokumentation"
+      },
+      "service4": {
+        "title": "Energie & Nachhaltigkeit",
+        "description": "Energiemanagement und nachhaltige Betriebsoptimierung"
+      },
+      "service5": {
+        "title": "Digitalisierung & Reporting",
+        "description": "Digitale Prozesse und transparente Berichterstattung"
+      },
+      "learnMore": "Mehr erfahren"
+    },
+    "customers": {
+      "title": "Vertraut von bekannten Kunden",
+      "viewAll": "Alle Kunden ansehen"
+    },
+    "regions": {
+      "title": "Regional stark vertreten",
+      "description": "Mit lokalen Teams in den wichtigsten Wirtschaftszentren",
+      "berlin": {
+        "title": "Berlin",
+        "description": "Hauptstadtregion und Brandenburg"
+      },
+      "hamburg": {
+        "title": "Hamburg",
+        "description": "Norddeutschland und Umland"
+      },
+      "heidelberg": {
+        "title": "Heidelberg",
+        "description": "Rhein-Neckar-Region"
+      },
+      "viewLocations": "Standorte ansehen"
+    },
+    "projects": {
+      "title": "Objektbilder und Projekte",
+      "description": "Erfolgreich realisierte Facility Management Projekte",
+      "project1": {
+        "title": "Bürokomplex München",
+        "impact": "25% Energieeffizienz gesteigert"
+      },
+      "project2": {
+        "title": "Industrieanlage Hamburg",
+        "impact": "Wartungskosten um 30% reduziert"
+      },
+      "project3": {
+        "title": "Campus Berlin",
+        "impact": "100% Compliance erreicht"
+      },
+      "project4": {
+        "title": "Logistikzentrum Frankfurt",
+        "impact": "Ausfallzeiten minimiert"
+      },
+      "project5": {
+        "title": "Verwaltungsgebäude Köln",
+        "impact": "Digitalisierung erfolgreich umgesetzt"
+      },
+      "project6": {
+        "title": "Produktionsstandort Stuttgart",
+        "impact": "Betriebskosten optimiert"
+      },
+      "viewReferences": "Referenzen ansehen"
+    },
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "Nachhaltiger Gebäudebetrieb. Messbar, sicher, wirtschaftlich"
+    },
+    "cta": {
+      "sales": {
+        "title": "Angebot anfordern",
+        "description": "Lassen Sie sich unverbindlich beraten und ein individuelles Angebot erstellen.",
+        "button": "Jetzt Angebot anfordern"
+      },
+      "career": {
+        "title": "Karriere starten",
+        "description": "Werden Sie Teil unseres Teams und gestalten Sie die Zukunft des Facility Managements mit.",
+        "button": "Offene Stellen ansehen"
+      },
+      "about": {
+        "title": "Über uns erfahren",
+        "description": "Lernen Sie pacon näher kennen: Unsere Werte, Mission und was uns auszeichnet.",
+        "button": "Mehr über pacon"
+      }
+    }
+  },
   "sales": {
     "hero": {
-      "title": "Vertrieb & Beratung",
-      "subtitle": "Wir bringen Ihre Immobilie auf das nächste Level",
-      "description": "Mit jahrzehntelanger Erfahrung im Facility Management bieten wir maßgeschneiderte Lösungen für Ihre Immobilie."
+      "title": "Profis für Ihren Gebäudebetrieb",
+      "subtitle": "Wartung, Instandhaltung, Services – messbar, sicher, wirtschaftlich",
+      "description": "Mit jahrzehntelanger Erfahrung im Facility Management bieten wir maßgeschneiderte Lösungen für Ihre Immobilie.",
+      "primaryCta": "Angebot anfordern"
     },
     "intro": {
       "headline": "Ihre Partner für professionelles Facility Management",
@@ -13,5 +118,33 @@
         "Kontaktieren Sie uns noch heute für ein unverbindliches Beratungsgespräch."
       ]
     }
+  },
+  "about": {
+    "hero": {
+      "title": "Über pacon Real Estate GmbH",
+      "subtitle": "Ihr vertrauensvoller Partner für professionelles Facility Management"
+    }
+  },
+  "career": {
+    "heroTitle": "Arbeiten bei pacon",
+    "heroSubtitle": "Technik, die funktioniert. Teams, die wirken. Starte bei uns in FM, Service und Projektmanagement",
+    "viewPositions": "Offene Stellen ansehen",
+    "applyUnsolicited": "Initiativ bewerben",
+    "employeeTestimonialsTitle": "Das sagen unsere Mitarbeiter",
+    "openPositionsTitle": "Offene Stellen",
+    "noPositionsMessage": "Gerade gibt es keine offenen Stellen",
+    "unsolicitedTitle": "Initiativbewerbung",
+    "unsolicitedDescription": "Sie finden nicht die passende Stelle? Senden Sie uns eine Initiativbewerbung - wir freuen uns auf Ihr Profil!",
+    "teamTitle": "Unser Team",
+    "benefitsTitle": "Deine Benefits",
+    "ctaApplicationTitle": "Direkt bewerben",
+    "ctaApplicationDescription": "Starten Sie Ihre Bewerbung für eine offene Position",
+    "ctaApplicationButton": "Jetzt bewerben",
+    "ctaInitiativeTitle": "Initiativbewerbung",
+    "ctaInitiativeDescription": "Bewerben Sie sich initiativ für zukünftige Möglichkeiten",
+    "ctaInitiativeButton": "Initiativ bewerben",
+    "ctaAboutTitle": "Über pacon",
+    "ctaAboutDescription": "Erfahren Sie mehr über unser Unternehmen und unsere Werte",
+    "ctaAboutButton": "Mehr erfahren"
   }
 }

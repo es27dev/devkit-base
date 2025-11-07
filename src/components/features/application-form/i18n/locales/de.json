@@ -1,0 +1,34 @@
+{
+  "applicationForm": {
+    "title": "Jetzt bewerben",
+    "description": "Senden Sie uns Ihre Bewerbung zu und werden Sie Teil unseres Teams.",
+    "nameLabel": "Vor- und Nachname",
+    "emailLabel": "E-Mail-Adresse",
+    "locationLabel": "Wunschstandort",
+    "jobTitleLabel": "Stelle",
+    "cvLabel": "Lebenslauf",
+    "cvDescription": "Nur PDF-Dateien, max. 10 MB",
+    "messageLabel": "Anschreiben / Motivation",
+    "messagePlaceholder": "Erzählen Sie uns, warum Sie zu pacon möchten und was Sie motiviert...",
+    "gdprLabel": "Ich stimme der Verarbeitung meiner Daten zu",
+    "gdprDescription": "Ihre Daten werden ausschließlich für die Bearbeitung Ihrer Bewerbung verwendet. Keine Weitergabe an Dritte.",
+    "submitButton": "Bewerbung abschicken",
+    "submitting": "Wird übertragen...",
+    "submitSuccess": "Vielen Dank für Ihre Bewerbung! Wir melden uns zeitnah bei Ihnen.",
+    "submitError": "Fehler beim Übertragen. Bitte versuchen Sie es erneut.",
+    "duplicateSubmission": "Sie haben bereits eine Bewerbung innerhalb der letzten 24 Stunden eingereicht.",
+    "retryButton": "Erneut versuchen",
+    "submitAnother": "Weitere Bewerbung einreichen",
+    "contactInfo": "Bei Fragen zu Ihrer Bewerbung kontaktieren Sie uns gerne direkt: bewerbung@pacon.de"
+  },
+  "testimonialSlider": {
+    "previous": "Vorheriges Testimonial",
+    "next": "Nächstes Testimonial",
+    "goToSlide": "Zu Testimonial"
+  },
+  "jobListing": {
+    "tasks": "Ihre Aufgaben:",
+    "requirements": "Ihr Profil:",
+    "applyForPosition": "Für diese Stelle bewerben"
+  }
+}

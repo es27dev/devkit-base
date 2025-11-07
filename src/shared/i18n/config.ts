@@ -5,17 +5,25 @@ import { initReactI18next } from "react-i18next";
 // Common Translations
 import commonDe from "./locales/de.json";
 
-// Component Translations
-import productFeatureDe from "@/components/features/product-feature/i18n/locales/de.json";
-
 // Page Translations
 import pagesDe from "@/pages/i18n/locales/de.json";
+import aboutDe from "@/pages/about/i18n/locales/de.json";
+
+// Feature Translations
+import themeToggleDe from "@/components/features/theme-toggle/i18n/locales/de.json";
+import contactFormDe from "@/components/features/contact-form/i18n/locales/de.json";
+import applicationFormDe from "@/components/features/application-form/i18n/locales/de.json";
+import jobFilterDe from "@/components/features/job-filter/i18n/locales/de.json";
 
 // Merge all translations into one flat object
 const mergedDe = {
   ...commonDe,
-  ...productFeatureDe,
   ...pagesDe,
+  ...aboutDe,
+  ...themeToggleDe,
+  ...contactFormDe,
+  ...applicationFormDe,
+  ...jobFilterDe,
 };
 
 i18n.use(initReactI18next).init({

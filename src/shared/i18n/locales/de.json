@@ -2,9 +2,62 @@
   "common": {
     "loading": "Lädt...",
     "error": "Ein Fehler ist aufgetreten",
-    "save": "Speichern",
+    "retry": "Erneut versuchen",
+    "submit": "Absenden",
     "cancel": "Abbrechen",
-    "delete": "Löschen",
-    "edit": "Bearbeiten"
+    "close": "Schließen",
+    "required": "Dieses Feld ist erforderlich",
+    "emailInvalid": "Bitte gültige E-Mail angeben",
+    "networkError": "Übertragung fehlgeschlagen",
+    "backToTop": "Nach oben"
+  },
+  "navigation": {
+    "home": "Start",
+    "sales": "Vertrieb",
+    "about": "Über uns",
+    "career": "Karriere",
+    "contact": "Kontakt"
+  },
+  "company": {
+    "name": "pacon Real Estate",
+    "tagline": "Wir kümmern uns um die Technik",
+    "description": "Ihr Partner für professionelles Facility Management"
+  },
+  "locations": {
+    "berlin": "Berlin",
+    "hamburg": "Hamburg",
+    "heidelberg": "Heidelberg",
+    "all": "Alle",
+    "other": "Anderes"
+  },
+  "footer": {
+    "company": {
+      "title": "Unternehmen"
+    },
+    "locations": {
+      "title": "Standorte"
+    },
+    "contact": {
+      "title": "Kontakt"
+    },
+    "legal": {
+      "impressum": "Impressum",
+      "datenschutz": "Datenschutz"
+    },
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "heading": "Seite nicht gefunden",
+    "message": "Die von Ihnen gesuchte Seite existiert leider nicht. Bitte wählen Sie eine der folgenden Optionen:",
+    "metaDescription": "Seite nicht gefunden. Zurück zur pacon Real Estate Homepage.",
+    "goTo": "Zu",
+    "backToHome": "Zurück zur Startseite",
+    "cards": {
+      "home": "Zur Hauptseite mit allen Services und Referenzen",
+      "sales": "Informationen zu unseren Dienstleistungen und Kontaktformular",
+      "about": "Erfahren Sie mehr über pacon Real Estate",
+      "career": "Offene Stellen und Karrieremöglichkeiten"
+    }
   }
 }

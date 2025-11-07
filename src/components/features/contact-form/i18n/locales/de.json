@@ -1,0 +1,77 @@
+{
+  "contactForm": {
+    "title": "Jetzt kaufen",
+    "subtitle": "Kontaktieren Sie uns für ein unverbindliches Angebot",
+    "contactPerson": {
+      "title": "Ihr Ansprechpartner",
+      "name": "Mario Unger-Faulhaber",
+      "role": "Vertriebsleitung",
+      "phone": "Telefon: +49 (0) 621 123 456 78",
+      "email": "E-Mail: mario.unger-faulhaber@pacon-re.com"
+    },
+    "form": {
+      "title": "Kontaktformular",
+      "fields": {
+        "name": {
+          "label": "Name *",
+          "required": "Dieses Feld ist erforderlich"
+        },
+        "email": {
+          "label": "E-Mail *",
+          "invalid": "Bitte gültige E-Mail angeben",
+          "required": "Dieses Feld ist erforderlich"
+        },
+        "phone": {
+          "label": "Telefon"
+        },
+        "company": {
+          "label": "Unternehmen"
+        },
+        "location": {
+          "label": "Standort",
+          "placeholder": "Wählen Sie einen Standort",
+          "options": {
+            "berlin": "Berlin",
+            "hamburg": "Hamburg",
+            "heidelberg": "Heidelberg",
+            "other": "Anderes"
+          }
+        },
+        "areaOfUse": {
+          "label": "Einsatzbereich",
+          "placeholder": "Wählen Sie einen Einsatzbereich",
+          "options": {
+            "technical": "Technisches FM",
+            "infrastructure": "Infra-Services",
+            "compliance": "Compliance",
+            "energy": "Energie",
+            "digitalization": "Digitalisierung"
+          }
+        },
+        "message": {
+          "label": "Nachricht",
+          "placeholder": "Teilen Sie uns Ihre Anfrage mit...",
+          "tooLong": "Nachricht zu lang (max. 1000 Zeichen)"
+        },
+        "consent": {
+          "label": "Ich stimme der Datenverarbeitung zu und möchte kontaktiert werden. *",
+          "required": "Bitte stimmen Sie der Datenverarbeitung zu"
+        }
+      },
+      "submit": {
+        "idle": "Angebot anfordern",
+        "submitting": "Wird gesendet...",
+        "retry": "Erneut versuchen"
+      },
+      "messages": {
+        "success": "Danke. Wir melden uns binnen 1 Werktag.",
+        "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+        "networkError": "Verbindung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+        "duplicate": "Ihre Anfrage wurde bereits registriert. Wir melden uns binnen 1 Werktag."
+      }
+    },
+    "privacy": {
+      "notice": "Keine Werbung. Keine Weitergabe an Dritte."
+    }
+  }
+}
