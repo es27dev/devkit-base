@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import CountingNumber from "@/components/base/counting-number";
 import { LogoPacon } from "@/components/base/logo";
@@ -65,7 +64,7 @@ export function HeroBuilder({
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: [0.42, 0, 0.58, 1] as const,
       },
     },
   };
@@ -77,7 +76,7 @@ export function HeroBuilder({
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: [0.42, 0, 0.58, 1] as const,
       },
     },
   };
@@ -131,14 +130,14 @@ export function HeroBuilder({
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40"
               >
                 {primaryButtonText}
-                <ArrowRight weight="bold" className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" />
               </Button>
               <Button
                 onClick={onSecondaryClick}
                 variant="outline"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-semibold rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors shadow-sm"
               >
-                <Play weight="fill" className="w-5 h-5" />
+                <Play className="w-5 h-5" />
                 {secondaryButtonText}
               </Button>
             </motion.div>

@@ -58,6 +58,21 @@ export default {
           DEFAULT: "#ef4444", // red-500
           foreground: "#fef2f2",
         },
+        // PACON Brand Colors
+        pacon: {
+          light: {
+            background: "#faf8f5",
+            primary: "#a63631",
+          },
+          dark: {
+            background: "#2a2a29",
+            primary: "#b13d38",
+          },
+        },
+      },
+      fontFamily: {
+        heading: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+        body: ["Lora", "ui-serif", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

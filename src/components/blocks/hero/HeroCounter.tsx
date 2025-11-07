@@ -1,9 +1,8 @@
-import React from "react";
 import { motion } from "framer-motion";
 import CountingNumber from "@/components/base/counting-number";
 import { LogoPacon } from "@/components/base/logo";
 
-import { ArrowRight, Play, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 import { Button } from "@/components/base/button";
 import { cn } from "@/shared/lib/utils";
@@ -60,7 +59,7 @@ export function HeroCounter({
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: [0.42, 0, 0.58, 1] as const,
       },
     },
   };
@@ -72,7 +71,7 @@ export function HeroCounter({
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: [0.42, 0, 0.58, 1] as const,
       },
     },
   };
@@ -134,7 +133,6 @@ export function HeroCounter({
                   className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
                 >
                   <CheckCircle
-                    weight="fill"
                     className="w-5 h-5 text-green-600 dark:text-green-500 flex-shrink-0"
                   />
                   <span>{feature}</span>
@@ -151,7 +149,7 @@ export function HeroCounter({
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30"
               >
                 {primaryButtonText}
-                <ArrowRight weight="bold" className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" />
               </Button>
               <Button
                 onClick={onSecondaryClick}

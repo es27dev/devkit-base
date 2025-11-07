@@ -1,0 +1,7 @@
+{
+  "jobFilter": {
+    "filterByLocation": "Nach Standort filtern:",
+    "selectLocation": "Standort auswählen",
+    "locationAll": "Alle Standorte"
+  }
+}

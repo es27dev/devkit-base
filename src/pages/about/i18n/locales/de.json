@@ -1,0 +1,87 @@
+{
+  "about": {
+    "title": "Über pacon Real Estate GmbH",
+    "introduction": "Als führender Facility Management Dienstleister sorgen wir seit über 25 Jahren für den reibungslosen Betrieb von Immobilien. Mit unserer Expertise in Technik, Compliance und Nachhaltigkeit optimieren wir Gebäudeprozesse und reduzieren Betriebskosten.",
+    "navigation": {
+      "mission": "Mission",
+      "values": "Werte",
+      "regions": "Regionen",
+      "references": "Referenzen",
+      "testimonials": "Kundenstimmen",
+      "certifications": "Zertifikate",
+      "customers": "Kunden",
+      "news": "News"
+    },
+    "mission": {
+      "title": "Unsere Mission",
+      "text": "Nachhaltiger Gebäudebetrieb. Messbar, sicher, wirtschaftlich. Wir optimieren Ihre Immobilie durch innovative Technologien, präventive Wartungsstrategien und intelligente Automatisierung. Dabei stehen Energieeffizienz, Rechtssicherheit und Kostentransparenz im Mittelpunkt unseres Handelns."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "quality": {
+        "title": "Qualität",
+        "description": "Höchste Standards in allen Bereichen des Facility Managements"
+      },
+      "trust": {
+        "title": "Vertrauen",
+        "description": "Verlässliche Partnerschaft und transparente Kommunikation"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Modernste Technologien für effiziente Gebäudebewirtschaftung"
+      },
+      "team": {
+        "title": "Team",
+        "description": "Erfahrene Experten mit Leidenschaft für perfekten Service"
+      }
+    },
+    "regions": {
+      "title": "Regionale Präsenz",
+      "description": "Mit Standorten in Berlin, Hamburg und Heidelberg sind wir deutschlandweit für Sie da.",
+      "berlin": {
+        "title": "Berlin",
+        "description": "Hauptstadtbüro für den Norden und Osten Deutschlands"
+      },
+      "hamburg": {
+        "title": "Hamburg",
+        "description": "Hanseatische Kompetenz für maritime und industrielle Projekte"
+      },
+      "heidelberg": {
+        "title": "Heidelberg",
+        "description": "Zentrale für Baden-Württemberg und süddeutsche Regionen"
+      }
+    },
+    "references": {
+      "title": "Unsere Referenzen",
+      "description": "Erfolgreiche Projekte sprechen für sich"
+    },
+    "testimonials": {
+      "title": "Das sagen unsere Kunden"
+    },
+    "certifications": {
+      "title": "Zertifizierungen",
+      "description": "Unsere Qualität wird regelmäßig geprüft und bestätigt",
+      "note": "Alle Zertifikate stehen auf Anfrage zur Verfügung"
+    },
+    "customers": {
+      "title": "Vertraut von führenden Unternehmen"
+    },
+    "news": {
+      "title": "Aktuelles von pacon"
+    },
+    "cta": {
+      "sales": {
+        "title": "Angebot anfordern",
+        "description": "Erfahren Sie, wie wir Ihr Facility Management optimieren können"
+      },
+      "career": {
+        "title": "Teil des Teams werden",
+        "description": "Entdecken Sie spannende Karrieremöglichkeiten bei pacon"
+      },
+      "contact": {
+        "title": "Kontakt aufnehmen",
+        "description": "Sprechen Sie direkt mit unseren Experten"
+      }
+    }
+  }
+}

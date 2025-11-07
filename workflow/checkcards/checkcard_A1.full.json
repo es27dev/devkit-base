@@ -1,8 +1,0 @@
-{
-  "stepA1": {
-    "step_index": 1,
-    "step_name": "User Request + Orchestrator Dialog",
-    "agent": "orchestrator",
-    "description": "Orchestrator refines user story and creates project_function"
-  }
-}

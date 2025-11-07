@@ -1,5 +1,5 @@
 import { Button } from "@/components/base/button";
-import { Logo, LogoPacon } from "@/components/base/logo";
+import { LogoPacon } from "@/components/base/logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
 

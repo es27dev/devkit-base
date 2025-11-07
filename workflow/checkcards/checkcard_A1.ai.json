@@ -1,7 +1,0 @@
-{
-  "from_step": "A1",
-  "for_step": "B1",
-  "data": {
-    "user_story": "Als Marketing-Manager von Pacon Real Estate GmbH möchte ich eine moderne, mobile-responsive Hero-Section in 3 Layout-Varianten entwickeln, damit ich verschiedene Zielgruppen (B2B Property Manager, potenzielle Mitarbeiter, Immobilienbesitzer) effektiv anspreche und gleichzeitig die Unternehmenskompetenz mit Statistiken (1000 Mitarbeiter, 35 Standorte, 2000 Kunden) unterstreiche.\n\nAcceptance Criteria:\n- 3 Hero-Varianten: (1) Stats-Driven (Counter im Vordergrund, Hintergrund-Media), (2) Split-Screen (Text/CTAs links, Media rechts), (3) Fullscreen Media (Overlay mit zentriertem Content)\n- CTAs: \"Jetzt bewerben\" + \"Vertrieb kontaktieren\"\n- Animierte Counter (Framer Motion)\n- Media-Support: Bild oder Video\n- Primärfarbe: #98221F (Pacon Rot)\n- Logo: public/paconMedium.svg\n- Mobil-responsiv (Tailwind breakpoints)\n- Techstack: React + TypeScript + Tailwind + shadcn/ui"
-  }
-}
