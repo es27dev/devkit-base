@@ -7,6 +7,7 @@ import { CustomerLogoWall } from '@/components/blocks/customer-logo-wall/custome
 import { ProjectGallery } from '@/components/blocks/project-gallery/project-gallery';
 import { TestimonialSlider } from '@/components/blocks/testimonial-slider/testimonial-slider';
 import { CTACard } from '@/components/blocks/cta-card/cta-card';
+import { HeroCounter } from '@/components/blocks/hero/HeroCounter';
 
 // Data
 import { mockCustomerLogos } from '@/shared/data/mock-customers';
@@ -17,6 +18,11 @@ import { mockNews } from '@/shared/data/mock-news';
 
 // Hooks
 import { useAnchorScroll } from '@/shared/hooks/use-anchor-scroll';
+import { useScrollSpy } from '@/shared/hooks/use-scroll-spy';
+import { usePageAnchors } from '@/shared/contexts/page-anchor-context';
+
+// Types
+import type { PageAnchorConfig } from '@/shared/types/page-config';
 
 // Hooks
 const useAboutPage = () => {
@@ -42,13 +48,7 @@ const useAboutPage = () => {
 // Handled in hook
 
 // Event Handlers
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    window.history.pushState(null, '', `#${sectionId}`);
-  }
-};
+// Handled in AnchorLinks component
 
 // Effects
 // Handled in useAnchorScroll hook
@@ -56,6 +56,34 @@ const scrollToSection = (sectionId: string) => {
 export function About() {
   const { t } = useTranslation();
   const { customerTestimonials } = useAboutPage();
+  const { setAnchors, setActiveAnchorId } = usePageAnchors();
+
+  // Define anchor navigation for this page (memoized to prevent re-renders)
+  const anchors = React.useMemo<PageAnchorConfig[]>(() => [
+    { id: 'mission', label: 'Mission', i18nKey: 'about.navigation.mission' },
+    { id: 'values', label: 'Werte', i18nKey: 'about.navigation.values' },
+    { id: 'regions', label: 'Regionen', i18nKey: 'about.navigation.regions' },
+    { id: 'references', label: 'Referenzen', i18nKey: 'about.navigation.references' },
+    { id: 'testimonials', label: 'Kundenstimmen', i18nKey: 'about.navigation.testimonials' },
+    { id: 'certifications', label: 'Zertifikate', i18nKey: 'about.navigation.certifications' },
+    { id: 'customers', label: 'Kunden', i18nKey: 'about.navigation.customers' },
+    { id: 'news', label: 'News', i18nKey: 'about.navigation.news' },
+  ], []);
+
+  // Track active section for highlighting
+  const sectionIds = React.useMemo(() => anchors.map((a) => a.id), [anchors]);
+  const activeSectionId = useScrollSpy(sectionIds);
+
+  // Set anchors in context for NavigationHeader
+  React.useEffect(() => {
+    setAnchors(anchors);
+    return () => setAnchors([]); // Cleanup when leaving page
+  }, [setAnchors]);
+
+  // Update active anchor in context
+  React.useEffect(() => {
+    setActiveAnchorId(activeSectionId);
+  }, [activeSectionId, setActiveAnchorId]);
 
   // T073: SEO Meta Tags - Set document title and meta
   React.useEffect(() => {
@@ -71,45 +99,30 @@ export function About() {
     <div className="min-h-screen bg-background">
 
       {/* T059: Page Header */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            {t('about.title')}
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            {t('about.introduction')}
-          </p>
-        </div>
-      </section>
-
-      {/* T060: Internal Anchor Navigation */}
-      <section className="border-b bg-muted/20">
-        <div className="container mx-auto px-4 py-6">
-          <nav className="flex flex-wrap justify-center gap-4">
-            {[
-              { key: 'mission', id: 'mission' },
-              { key: 'values', id: 'values' },
-              { key: 'regions', id: 'regions' },
-              { key: 'references', id: 'references' },
-              { key: 'testimonials', id: 'testimonials' },
-              { key: 'certifications', id: 'certifications' },
-              { key: 'customers', id: 'customers' },
-              { key: 'news', id: 'news' }
-            ].map(({ key, id }) => (
-              <button
-                key={key}
-                onClick={() => scrollToSection(id)}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-background rounded-md transition-colors"
-              >
-                {t(`about.navigation.${key}`)}
-              </button>
-            ))}
-          </nav>
-        </div>
-      </section>
+      <HeroCounter
+        badge="Seit über 30 Jahren"
+        heading={t('about.title')}
+        description={t('about.introduction')}
+        features={[
+          "Zertifiziert nach DIN ISO 9001",
+          "Regionale Präsenz in Berlin, Hamburg & Heidelberg",
+          "Über 400.000 m² betreute Fläche",
+          "Langfristige Kundenbeziehungen"
+        ]}
+        stats={[
+          { number: 30, label: "Jahre Erfahrung", suffix: "+" },
+          { number: 400000, label: "m² Fläche", suffix: "" },
+          { number: 150, label: "Mitarbeiter", suffix: "+" },
+          { number: 99, label: "Kundenzufriedenheit", suffix: "%" },
+        ]}
+        imageUrl="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"
+        imageAlt="pacon Team"
+        primaryButtonText="Kontakt aufnehmen"
+        secondaryButtonText="Mehr erfahren"
+      />
 
       {/* T061: Mission Section */}
-      <section id="mission" className="container mx-auto px-4 py-16">
+      <section id="mission" className="scroll-mt-24 container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">{t('about.mission.title')}</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -119,7 +132,7 @@ export function About() {
       </section>
 
       {/* T062: Values Section */}
-      <section id="values" className="bg-muted/20 py-16">
+      <section id="values" className="scroll-mt-24 bg-muted/20 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">{t('about.values.title')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -138,7 +151,7 @@ export function About() {
       </section>
 
       {/* T063: Regional Presence Section */}
-      <section id="regions" className="container mx-auto px-4 py-16">
+      <section id="regions" className="scroll-mt-24 container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-6">{t('about.regions.title')}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -160,7 +173,7 @@ export function About() {
       </section>
 
       {/* T064: References Section */}
-      <section id="references" className="bg-muted/20 py-16">
+      <section id="references" className="scroll-mt-24 bg-muted/20 py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-6">{t('about.references.title')}</h2>
@@ -173,7 +186,7 @@ export function About() {
       </section>
 
       {/* T065: Customer Testimonials Section */}
-      <section id="testimonials" className="container mx-auto px-4 py-16">
+      <section id="testimonials" className="scroll-mt-24 container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-12">
           {t('about.testimonials.title')}
         </h2>
@@ -181,7 +194,7 @@ export function About() {
       </section>
 
       {/* T066: Certifications Section */}
-      <section id="certifications" className="bg-muted/20 py-16">
+      <section id="certifications" className="scroll-mt-24 bg-muted/20 py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-6">{t('about.certifications.title')}</h2>
@@ -219,7 +232,7 @@ export function About() {
       </section>
 
       {/* T067: Customer Logos Section */}
-      <section id="customers" className="container mx-auto px-4 py-16">
+      <section id="customers" className="scroll-mt-24 container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-12">
           {t('about.customers.title')}
         </h2>
@@ -227,7 +240,7 @@ export function About() {
       </section>
 
       {/* T068: News Section */}
-      <section id="news" className="bg-muted/20 py-16">
+      <section id="news" className="scroll-mt-24 bg-muted/20 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
             {t('about.news.title')}

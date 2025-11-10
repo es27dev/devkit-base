@@ -11,6 +11,8 @@ import { JobFilter } from "@/components/features/job-filter/job-filter";
 import { JobListing } from "@/components/blocks/job-listing/job-listing";
 import { TeamProfile } from "@/components/blocks/team-profile/team-profile";
 import { ApplicationForm } from "@/components/features/application-form/application-form";
+import { CTACard } from "@/components/blocks/cta-card/cta-card";
+import { HeroCounter } from "@/components/blocks/hero/HeroCounter";
 
 // Data
 import { mockJobListings } from "@/shared/data/mock-jobs";
@@ -20,6 +22,11 @@ import { mockTestimonials } from "@/shared/data/mock-testimonials";
 
 // Types
 import type { LocationFilter } from "@/shared/lib/form-validation";
+import type { PageAnchorConfig } from "@/shared/types/page-config";
+
+// Context
+import { usePageAnchors } from "@/shared/contexts/page-anchor-context";
+import { useScrollSpy } from "@/shared/hooks/use-scroll-spy";
 
 // Hooks
 
@@ -40,9 +47,21 @@ export function Career() {
   const [searchParams] = useSearchParams();
   const [selectedLocation, setSelectedLocation] = useState<LocationFilter>("Alle");
   const [prefilledJobTitle, setPrefilledJobTitle] = useState("");
+  const { setAnchors, setActiveAnchorId } = usePageAnchors();
 
   // Translations
   const { t } = useTranslation();
+
+  // Define anchor navigation (memoized)
+  const anchors = useState<PageAnchorConfig[]>(() => [
+    { id: 'jobs', label: 'Offene Stellen', i18nKey: 'career.navigation.jobs' },
+    { id: 'team', label: 'Team', i18nKey: 'career.navigation.team' },
+    { id: 'benefits', label: 'Benefits', i18nKey: 'career.navigation.benefits' },
+    { id: 'bewerben', label: 'Bewerben', i18nKey: 'career.navigation.apply' },
+  ])[0];
+
+  const sectionIds = useState(() => anchors.map((a) => a.id))[0];
+  const activeSectionId = useScrollSpy(sectionIds);
 
   // Data Loading
 
@@ -77,6 +96,16 @@ export function Career() {
   };
 
   // Effects
+  // Set anchors in context
+  useEffect(() => {
+    setAnchors(anchors);
+    return () => setAnchors([]);
+  }, [setAnchors]);
+
+  useEffect(() => {
+    setActiveAnchorId(activeSectionId);
+  }, [activeSectionId, setActiveAnchorId]);
+
   // SEO meta tags (T098)
   useEffect(() => {
     document.title = "Karriere bei pacon – Jobs im Facility Management, Service, Projekte";
@@ -107,24 +136,29 @@ export function Career() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section - FR-029 */}
-      <section className="relative py-24 px-4 text-center bg-gradient-to-b from-muted/50">
-        <div className="container mx-auto max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            {t("career.heroTitle")}
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            {t("career.heroSubtitle")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={handleScrollToJobs}>
-              {t("career.viewPositions")}
-            </Button>
-            <Button size="lg" variant="outline" onClick={handleScrollToApplication}>
-              {t("career.applyUnsolicited")}
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeroCounter
+        badge="Jetzt bewerben"
+        heading={t("career.heroTitle")}
+        description={t("career.heroSubtitle")}
+        features={[
+          "Flexible Arbeitszeitmodelle",
+          "Weiterbildung & Entwicklung",
+          "Attraktive Benefits",
+          "Teamorientierte Kultur"
+        ]}
+        stats={[
+          { number: 150, label: "Mitarbeiter", suffix: "+" },
+          { number: 30, label: "Jahre Erfahrung", suffix: "+" },
+          { number: 3, label: "Standorte", suffix: "" },
+          { number: 95, label: "Mitarbeiterzufriedenheit", suffix: "%" },
+        ]}
+        imageUrl="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800"
+        imageAlt="pacon Team"
+        primaryButtonText={t("career.viewPositions")}
+        secondaryButtonText={t("career.applyUnsolicited")}
+        onPrimaryClick={handleScrollToJobs}
+        onSecondaryClick={handleScrollToApplication}
+      />
 
       {/* Employee Testimonials Section - FR-030 */}
       <section className="py-16 px-4">
@@ -137,7 +171,7 @@ export function Career() {
       </section>
 
       {/* Open Positions Section - FR-031 to FR-033 */}
-      <section id="jobs" className="py-16 px-4 bg-muted/30">
+      <section id="jobs" className="scroll-mt-24 py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">
             {t("career.openPositionsTitle")}
@@ -192,7 +226,7 @@ export function Career() {
       </section>
 
       {/* Team Section - FR-035 */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section id="team" className="scroll-mt-24 py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">
             {t("career.teamTitle")}
@@ -206,7 +240,7 @@ export function Career() {
       </section>
 
       {/* Benefits Section - FR-036 */}
-      <section className="py-16 px-4">
+      <section id="benefits" className="scroll-mt-24 py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">
             {t("career.benefitsTitle")}
@@ -227,7 +261,7 @@ export function Career() {
       </section>
 
       {/* Application Form Section - FR-037 to FR-040 */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section id="bewerben" className="scroll-mt-24 py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-2xl">
           <ApplicationForm
             prefilledJobTitle={prefilledJobTitle}
@@ -240,49 +274,29 @@ export function Career() {
       </section>
 
       {/* CTA Cards Section - T096 */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="font-bold text-lg mb-3">{t("career.ctaApplicationTitle")}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("career.ctaApplicationDescription")}
-                </p>
-                <Button onClick={handleScrollToApplication}>
-                  {t("career.ctaApplicationButton")}
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="font-bold text-lg mb-3">{t("career.ctaInitiativeTitle")}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("career.ctaInitiativeDescription")}
-                </p>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setPrefilledJobTitle("Initiativbewerbung");
-                    handleScrollToApplication();
-                  }}
-                >
-                  {t("career.ctaInitiativeButton")}
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="font-bold text-lg mb-3">{t("career.ctaAboutTitle")}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {t("career.ctaAboutDescription")}
-                </p>
-                <Button variant="outline" asChild>
-                  <a href="/about">{t("career.ctaAboutButton")}</a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+      <section className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <CTACard
+            title={t("career.ctaApplicationTitle")}
+            description={t("career.ctaApplicationDescription")}
+            buttonText={t("career.ctaApplicationButton")}
+            variant="primary"
+            href="#bewerben"
+          />
+          <CTACard
+            title={t("career.ctaInitiativeTitle")}
+            description={t("career.ctaInitiativeDescription")}
+            buttonText={t("career.ctaInitiativeButton")}
+            variant="secondary"
+            href="#bewerben"
+          />
+          <CTACard
+            title={t("career.ctaAboutTitle")}
+            description={t("career.ctaAboutDescription")}
+            buttonText={t("career.ctaAboutButton")}
+            variant="secondary"
+            href="/about"
+          />
         </div>
       </section>
     </div>

@@ -3,9 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/base/button';
 import { cn } from '@/shared/lib/utils';
+import { AnchorLinks } from '@/components/blocks/anchor-links/anchor-links';
+import { usePageAnchors } from '@/shared/contexts/page-anchor-context';
+import type { PageAnchorConfig } from '@/shared/types/page-config';
 
 // Hooks
-// (handled via useTranslation and useLocation)
+// (handled via useTranslation, useLocation, and usePageAnchors)
 
 // Translations
 // Uses common navigation translations
@@ -27,11 +30,18 @@ import { cn } from '@/shared/lib/utils';
 
 export interface NavigationHeaderProps {
   className?: string;
+  anchors?: PageAnchorConfig[];
+  activeAnchorId?: string | null;
 }
 
-export function NavigationHeader({ className }: NavigationHeaderProps) {
+export function NavigationHeader({ className, anchors: anchorsProp, activeAnchorId: activeAnchorIdProp }: NavigationHeaderProps) {
   // 1. HOOKS
   const location = useLocation();
+  const { anchors: anchorsContext, activeAnchorId: activeAnchorIdContext } = usePageAnchors();
+
+  // Use props if provided, otherwise use context
+  const anchors = anchorsProp ?? anchorsContext;
+  const activeAnchorId = activeAnchorIdProp ?? activeAnchorIdContext;
 
   // 2. TRANSLATIONS
   const { t } = useTranslation();
@@ -62,7 +72,7 @@ export function NavigationHeader({ className }: NavigationHeaderProps) {
   // (none)
 
   return (
-    <nav className={cn('border-b bg-background', className)}>
+    <nav className={cn('sticky top-0 z-50 border-b bg-background', className)}>
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
@@ -126,6 +136,13 @@ export function NavigationHeader({ className }: NavigationHeaderProps) {
           ))}
         </div>
       </div>
+
+      {/* Anchor Navigation - Desktop only */}
+      {anchors && anchors.length > 0 && (
+        <div className="hidden md:block">
+          <AnchorLinks anchors={anchors} activeId={activeAnchorId} />
+        </div>
+      )}
     </nav>
   );
 }

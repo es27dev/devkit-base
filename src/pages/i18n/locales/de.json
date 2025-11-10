@@ -117,12 +117,28 @@
         "Von der technischen Wartung bis zur infrastrukturellen Betreuung – wir bieten Ihnen alle Leistungen aus einer Hand.",
         "Kontaktieren Sie uns noch heute für ein unverbindliches Beratungsgespräch."
       ]
+    },
+    "navigation": {
+      "services": "Leistungen",
+      "process": "Ablauf",
+      "projects": "Projekte",
+      "contact": "Kontakt"
     }
   },
   "about": {
     "hero": {
       "title": "Über pacon Real Estate GmbH",
       "subtitle": "Ihr vertrauensvoller Partner für professionelles Facility Management"
+    },
+    "navigation": {
+      "mission": "Mission",
+      "values": "Werte",
+      "regions": "Regionen",
+      "references": "Referenzen",
+      "testimonials": "Kundenstimmen",
+      "certifications": "Zertifikate",
+      "customers": "Kunden",
+      "news": "News"
     }
   },
   "career": {
@@ -145,6 +161,12 @@
     "ctaInitiativeButton": "Initiativ bewerben",
     "ctaAboutTitle": "Über pacon",
     "ctaAboutDescription": "Erfahren Sie mehr über unser Unternehmen und unsere Werte",
-    "ctaAboutButton": "Mehr erfahren"
+    "ctaAboutButton": "Mehr erfahren",
+    "navigation": {
+      "jobs": "Offene Stellen",
+      "team": "Team",
+      "benefits": "Benefits",
+      "apply": "Bewerben"
+    }
   }
 }

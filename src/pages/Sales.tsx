@@ -8,6 +8,10 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/base/button";
 import { Card, CardContent } from "@/components/base/card";
 
+// Block Components
+import { CTACard } from "@/components/blocks/cta-card/cta-card";
+import { HeroBuilder } from "@/components/blocks/hero/HeroBuilder";
+
 // Mock Data
 import { mockServices } from "@/shared/data/mock-services";
 import { mockProjectReferences } from "@/shared/data/mock-projects";
@@ -16,25 +20,32 @@ import { mockProjectReferences } from "@/shared/data/mock-projects";
 import { ContactForm } from "@/components/features/contact-form/contact-form";
 
 // Types
-interface Metric {
-  value: string;
-  label: string;
-}
+import type { PageAnchorConfig } from "@/shared/types/page-config";
+
+// Context
+import { usePageAnchors } from "@/shared/contexts/page-anchor-context";
+import { useScrollSpy } from "@/shared/hooks/use-scroll-spy";
 
 export function Sales() {
   // 1. Hooks
   const { t } = useTranslation();
+  const { setAnchors, setActiveAnchorId } = usePageAnchors();
+
+  // Define anchor navigation (memoized)
+  const anchors = useState<PageAnchorConfig[]>(() => [
+    { id: 'services', label: 'Leistungen', i18nKey: 'sales.navigation.services' },
+    { id: 'process', label: 'Ablauf', i18nKey: 'sales.navigation.process' },
+    { id: 'projects', label: 'Projekte', i18nKey: 'sales.navigation.projects' },
+    { id: 'kontakt', label: 'Kontakt', i18nKey: 'sales.navigation.contact' },
+  ])[0];
+
+  const sectionIds = useState(() => anchors.map((a) => a.id))[0];
+  const activeSectionId = useScrollSpy(sectionIds);
 
   // 2. Translations
   // (handled by useTranslation hook)
 
   // 3. Data Loading
-  const metrics: Metric[] = [
-    { value: "10.000", label: "Anlagen gewartet" },
-    { value: "400.000 m²", label: "im Griff" },
-    { value: "30", label: "Rechnungen nicht geprüft" }
-  ];
-
   const services = mockServices.sort((a, b) => a.displayOrder - b.displayOrder);
   const projects = mockProjectReferences.slice(0, 6).sort((a, b) => a.displayOrder - b.displayOrder);
 
@@ -51,6 +62,16 @@ export function Sales() {
   };
 
   // 7. Effects
+  // Set anchors in context
+  useEffect(() => {
+    setAnchors(anchors);
+    return () => setAnchors([]);
+  }, [setAnchors]);
+
+  useEffect(() => {
+    setActiveAnchorId(activeSectionId);
+  }, [activeSectionId, setActiveAnchorId]);
+
   // SEO meta tags - T056
   useEffect(() => {
     // Set page title and meta description (from spec)
@@ -75,41 +96,28 @@ export function Sales() {
   return (
     <div className="flex-1 flex flex-col w-full">
       {/* Hero Section - T042 (FR-009) */}
-      <section className="bg-gradient-to-br from-background to-muted py-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-              Profis für Ihren Gebäudebetrieb
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Wartung, Instandhaltung, Services – messbar, sicher, wirtschaftlich
-            </p>
-
-            {/* Metrics Display */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              {metrics.map((metric, index) => (
-                <Card key={index}>
-                  <CardContent className="p-6 text-center">
-                    <div className="text-3xl font-bold text-primary">{metric.value}</div>
-                    <div className="text-sm text-muted-foreground">{metric.label}</div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <Button
-              onClick={scrollToContact}
-              size="lg"
-              className="mt-8"
-            >
-              Angebot anfordern
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeroBuilder
+        heading="Profis für Ihren Gebäudebetrieb"
+        description="Wartung, Instandhaltung, Services – messbar, sicher, wirtschaftlich"
+        stats={[
+          { number: 10000, label: "Anlagen gewartet", suffix: "+" },
+          { number: 400000, label: "m² Fläche betreut", suffix: "" },
+          { number: 30, label: "Jahre Erfahrung", suffix: "+" },
+          { number: 99, label: "Kundenzufriedenheit", suffix: "%" },
+        ]}
+        primaryImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"
+        secondaryImages={{
+          image1: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400",
+          image2: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400",
+        }}
+        imageAlt="pacon Gebäudebetrieb"
+        primaryButtonText="Angebot anfordern"
+        secondaryButtonText="Mehr erfahren"
+        onPrimaryClick={scrollToContact}
+      />
 
       {/* Core Services Section - T043 (FR-010) */}
-      <section className="py-16">
+      <section id="services" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl font-bold">Unsere Kernleistungen</h2>
@@ -129,7 +137,7 @@ export function Sales() {
       </section>
 
       {/* Implementation Process Section - T044 (FR-011) */}
-      <section className="py-16 bg-muted/50">
+      <section id="process" className="scroll-mt-24 py-16 bg-muted/50">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl font-bold">So läuft die Implementation</h2>
@@ -179,7 +187,7 @@ export function Sales() {
       </section>
 
       {/* Project Gallery Section - T045 (FR-012) */}
-      <section className="py-16">
+      <section id="projects" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl font-bold">Objektbilder und Projekte</h2>
@@ -204,7 +212,7 @@ export function Sales() {
       </section>
 
       {/* Contact Section - T046-T054 Contact Form Implementation */}
-      <section id="kontakt" className="py-16 bg-muted/50">
+      <section id="kontakt" className="scroll-mt-24 py-16 bg-muted/50">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center space-y-4 mb-8">
             <h2 className="text-3xl font-bold">Jetzt kaufen</h2>
@@ -219,33 +227,22 @@ export function Sales() {
       </section>
 
       {/* CTA Cards Section - T055 */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="text-center">
-              <CardContent className="p-8 space-y-4">
-                <h3 className="text-2xl font-semibold">Arbeiten bei pacon</h3>
-                <p className="text-muted-foreground">
-                  Entdecken Sie spannende Karrierechancen in unserem Team
-                </p>
-                <Button asChild>
-                  <a href="/career">Stellenausschreibungen</a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardContent className="p-8 space-y-4">
-                <h3 className="text-2xl font-semibold">Über pacon</h3>
-                <p className="text-muted-foreground">
-                  Erfahren Sie mehr über unser Unternehmen und unsere Werte
-                </p>
-                <Button asChild variant="outline">
-                  <a href="/about">Mehr erfahren</a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+      <section className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <CTACard
+            title="Arbeiten bei pacon"
+            description="Entdecken Sie spannende Karrierechancen in unserem Team"
+            buttonText="Stellenausschreibungen"
+            href="/career"
+            variant="primary"
+          />
+          <CTACard
+            title="Über pacon"
+            description="Erfahren Sie mehr über unser Unternehmen und unsere Werte"
+            buttonText="Mehr erfahren"
+            href="/about"
+            variant="secondary"
+          />
         </div>
       </section>
     </div>

@@ -3,9 +3,9 @@ import { LogoPacon } from "@/components/base/logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
 
-const Navbar = () => {
+export function Navbar() {
   return (
-    <header className="w-full bg-muted border-b">
+    <header className="sticky top-0 z-50 w-full bg-muted border-b">
       <nav className="h-16 bg-background">
         <div className="h-full flex items-center justify-between max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <LogoPacon size="md" className="h-8  hidden md:block xl:h-9" />
@@ -29,6 +29,4 @@ const Navbar = () => {
       </nav>
     </header>
   );
-};
-
-export default Navbar;
+}
