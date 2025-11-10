@@ -6,6 +6,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/base/dialog';
+import { Separator } from '@/components/base/separator';
+import { QuickApplicationForm } from '@/components/features/quick-application-form/quick-application-form';
 
 // Types
 export interface JobDetailDialogProps {
@@ -59,7 +61,7 @@ export function JobDetailDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>{jobData.title}</DialogTitle>
           <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
@@ -71,120 +73,61 @@ export function JobDetailDialog({
           </div>
         </DialogHeader>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-6">
-          {/* Left: Full Job Description */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Ihre Aufgaben</h3>
-              <ul className="space-y-2">
-                {jobData.tasks.map((task, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm">
-                    <span className="text-primary mt-1">•</span>
-                    <span>{task}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Ihre Erfahrungen</h3>
-              <ul className="space-y-2">
-                {jobData.requirements.map((requirement, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm">
-                    <span className="text-primary mt-1">•</span>
-                    <span>{requirement}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Wir bieten Ihnen</h3>
-              <ul className="space-y-2">
-                {jobData.benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm">
-                    <span className="text-primary mt-1">•</span>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="mt-6 space-y-6">
+          {/* Ihre Aufgaben */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Ihre Aufgaben</h3>
+            <ul className="space-y-2">
+              {jobData.tasks.map((task, index) => (
+                <li key={index} className="flex items-start gap-2 text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  <span>{task}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Right: Quick Application Form */}
-          <div className="bg-muted/30 p-6 rounded-lg">
+          <Separator />
+
+          {/* Ihre Erfahrungen */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Ihre Erfahrungen</h3>
+            <ul className="space-y-2">
+              {jobData.requirements.map((requirement, index) => (
+                <li key={index} className="flex items-start gap-2 text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  <span>{requirement}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <Separator />
+
+          {/* Wir bieten Ihnen */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Wir bieten Ihnen</h3>
+            <ul className="space-y-2">
+              {jobData.benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start gap-2 text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <Separator className="my-8" />
+
+          {/* Quick Application Form */}
+          <div>
             <h3 className="text-lg font-semibold mb-4">Jetzt bewerben</h3>
-            <form className="space-y-4">
-              <div>
-                <label className="text-sm font-medium mb-1 block">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="w-full px-3 py-2 border rounded-md bg-background"
-                  placeholder="Ihr vollständiger Name"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm font-medium mb-1 block">
-                  E-Mail *
-                </label>
-                <input
-                  type="email"
-                  required
-                  className="w-full px-3 py-2 border rounded-md bg-background"
-                  placeholder="ihre.email@beispiel.de"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm font-medium mb-1 block">
-                  Telefon
-                </label>
-                <input
-                  type="tel"
-                  className="w-full px-3 py-2 border rounded-md bg-background"
-                  placeholder="+49 123 456789"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm font-medium mb-1 block">
-                  Lebenslauf (PDF) *
-                </label>
-                <input
-                  type="file"
-                  accept=".pdf"
-                  required
-                  className="w-full px-3 py-2 border rounded-md bg-background file:mr-4 file:py-1 file:px-2 file:rounded file:border-0 file:bg-primary file:text-primary-foreground"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm font-medium mb-1 block">
-                  Anschreiben (optional)
-                </label>
-                <textarea
-                  rows={4}
-                  className="w-full px-3 py-2 border rounded-md bg-background resize-none"
-                  placeholder="Kurze Nachricht an uns..."
-                />
-              </div>
-
-              <button
-                type="button"
-                onClick={handleApply}
-                className="w-full bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium hover:bg-primary/90 transition-colors"
-              >
-                Bewerbung absenden
-              </button>
-
-              <p className="text-xs text-muted-foreground">
-                * Pflichtfelder
-              </p>
-            </form>
+            <QuickApplicationForm
+              jobTitle={jobData.title}
+              onSubmit={() => {
+                handleApply();
+              }}
+            />
           </div>
         </div>
       </DialogContent>
