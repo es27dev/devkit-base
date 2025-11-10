@@ -6,7 +6,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/base/dialog';
-import { Separator } from '@/components/base/separator';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/base/accordion';
 import { QuickApplicationForm } from '@/components/features/quick-application-form/quick-application-form';
 
 // Types
@@ -73,54 +78,62 @@ export function JobDetailDialog({
           </div>
         </DialogHeader>
 
-        <div className="mt-6 space-y-6">
-          {/* Ihre Aufgaben */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Ihre Aufgaben</h3>
-            <ul className="space-y-2">
-              {jobData.tasks.map((task, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm">
-                  <span className="text-primary mt-1">•</span>
-                  <span>{task}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-6">
+          <Accordion type="single" defaultValue="aufgaben" collapsible={false}>
+            {/* Ihre Aufgaben */}
+            <AccordionItem value="aufgaben">
+              <AccordionTrigger className="text-lg font-semibold">
+                Ihre Aufgaben
+              </AccordionTrigger>
+              <AccordionContent>
+                <ul className="space-y-2 pt-2">
+                  {jobData.tasks.map((task, index) => (
+                    <li key={index} className="flex items-start gap-2 text-sm">
+                      <span className="text-primary mt-1">•</span>
+                      <span>{task}</span>
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
 
-          <Separator />
+            {/* Ihre Erfahrungen */}
+            <AccordionItem value="erfahrungen">
+              <AccordionTrigger className="text-lg font-semibold">
+                Ihre Erfahrungen
+              </AccordionTrigger>
+              <AccordionContent>
+                <ul className="space-y-2 pt-2">
+                  {jobData.requirements.map((requirement, index) => (
+                    <li key={index} className="flex items-start gap-2 text-sm">
+                      <span className="text-primary mt-1">•</span>
+                      <span>{requirement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
 
-          {/* Ihre Erfahrungen */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Ihre Erfahrungen</h3>
-            <ul className="space-y-2">
-              {jobData.requirements.map((requirement, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm">
-                  <span className="text-primary mt-1">•</span>
-                  <span>{requirement}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <Separator />
-
-          {/* Wir bieten Ihnen */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Wir bieten Ihnen</h3>
-            <ul className="space-y-2">
-              {jobData.benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm">
-                  <span className="text-primary mt-1">•</span>
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <Separator className="my-8" />
+            {/* Wir bieten Ihnen */}
+            <AccordionItem value="benefits">
+              <AccordionTrigger className="text-lg font-semibold">
+                Wir bieten Ihnen
+              </AccordionTrigger>
+              <AccordionContent>
+                <ul className="space-y-2 pt-2">
+                  {jobData.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-2 text-sm">
+                      <span className="text-primary mt-1">•</span>
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
 
           {/* Quick Application Form */}
-          <div>
+          <div className="mt-8 pt-8 border-t">
             <h3 className="text-lg font-semibold mb-4">Jetzt bewerben</h3>
             <QuickApplicationForm
               jobTitle={jobData.title}
