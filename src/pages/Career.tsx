@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/base/card
 import { TestimonialSlider } from "@/components/blocks/testimonial-slider/testimonial-slider";
 import { JobFilter } from "@/components/features/job-filter/job-filter";
 import { JobListing } from "@/components/blocks/job-listing/job-listing";
-import { TeamProfile } from "@/components/blocks/team-profile/team-profile";
+import { TeamSection } from "@/components/blocks/team-section/team-section";
 import { ApplicationForm } from "@/components/features/application-form/application-form";
 import { CTACard } from "@/components/blocks/cta-card/cta-card";
 import { HeroCounter } from "@/components/blocks/hero/HeroCounter";
@@ -73,7 +73,6 @@ export function Career() {
     return job.active && job.location === selectedLocation;
   });
 
-  const sortedTeam = mockTeamProfiles.sort((a, b) => a.displayOrder - b.displayOrder);
   const sortedBenefits = mockBenefits.sort((a, b) => a.displayOrder - b.displayOrder);
 
   // Event Handlers
@@ -226,17 +225,17 @@ export function Career() {
       </section>
 
       {/* Team Section - FR-035 */}
-      <section id="team" className="scroll-mt-24 py-16 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">
+      <section id="team" className="scroll-mt-24 bg-muted/30">
+        <div className="container mx-auto max-w-6xl pt-16 px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">
             {t("career.teamTitle")}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sortedTeam.map((member) => (
-              <TeamProfile key={member.id} member={member} />
-            ))}
-          </div>
         </div>
+        <TeamSection
+          members={mockTeamProfiles}
+          showHeader={false}
+          showCTA={false}
+        />
       </section>
 
       {/* Benefits Section - FR-036 */}

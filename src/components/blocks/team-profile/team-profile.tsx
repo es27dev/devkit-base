@@ -1,5 +1,5 @@
 // External Libraries
-import { useTranslation } from "react-i18next";
+// (none)
 
 // Components
 import { Card, CardContent } from "@/components/base/card";

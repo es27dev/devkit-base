@@ -1,6 +1,7 @@
 // T101: Footer block component - site footer with contact and legal links
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { Twitter, Github, Linkedin } from 'lucide-react';
 import { cn } from '@/shared/lib/utils';
 
 // Hooks
@@ -53,6 +54,12 @@ export function Footer({ className }: FooterProps) {
     { name: t('locations.berlin'), address: 'Berlin' },
     { name: t('locations.hamburg'), address: 'Hamburg' },
     { name: t('locations.heidelberg'), address: 'Heidelberg' },
+  ];
+
+  const socialLinks = [
+    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
   ];
 
   // 4. EARLY RETURNS
@@ -155,8 +162,24 @@ export function Footer({ className }: FooterProps) {
           </div>
         </div>
 
+        {/* Social Media Links */}
+        <div className="mt-12 flex items-center justify-center gap-6">
+          {socialLinks.map(({ icon: Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+              aria-label={label}
+            >
+              <Icon className="h-5 w-5" />
+            </a>
+          ))}
+        </div>
+
         {/* Bottom Bar */}
-        <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
           <p>
             © {currentYear} {t('company.name')}. {t('footer.rights')}
           </p>
