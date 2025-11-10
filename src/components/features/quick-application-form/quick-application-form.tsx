@@ -15,7 +15,6 @@ export interface QuickApplicationData {
   email: string;
   phone?: string;
   cv: File;
-  message?: string;
 }
 
 export function QuickApplicationForm({
@@ -78,67 +77,58 @@ export function QuickApplicationForm({
 
   return (
     <form onSubmit={handleSubmit} className={cn('space-y-4', className)}>
-      <div>
-        <label className="text-sm font-medium mb-1 block">Name *</label>
-        <input
-          type="text"
-          required
-          value={formData.name || ''}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full px-3 py-2 border rounded-md bg-background"
-          placeholder="Ihr vollständiger Name"
-        />
+      {/* Row 1: Name + Email */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="text-sm font-medium mb-1 block">Name *</label>
+          <input
+            type="text"
+            required
+            value={formData.name || ''}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            className="w-full px-3 py-2 border rounded-md bg-background"
+            placeholder="Ihr vollständiger Name"
+          />
+        </div>
+
+        <div>
+          <label className="text-sm font-medium mb-1 block">E-Mail *</label>
+          <input
+            type="email"
+            required
+            value={formData.email || ''}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className="w-full px-3 py-2 border rounded-md bg-background"
+            placeholder="ihre.email@beispiel.de"
+          />
+        </div>
       </div>
 
-      <div>
-        <label className="text-sm font-medium mb-1 block">E-Mail *</label>
-        <input
-          type="email"
-          required
-          value={formData.email || ''}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full px-3 py-2 border rounded-md bg-background"
-          placeholder="ihre.email@beispiel.de"
-        />
-      </div>
+      {/* Row 2: Telefon + CV Upload */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="text-sm font-medium mb-1 block">Telefon</label>
+          <input
+            type="tel"
+            value={formData.phone || ''}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            className="w-full px-3 py-2 border rounded-md bg-background"
+            placeholder="+49 123 456789"
+          />
+        </div>
 
-      <div>
-        <label className="text-sm font-medium mb-1 block">Telefon</label>
-        <input
-          type="tel"
-          value={formData.phone || ''}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full px-3 py-2 border rounded-md bg-background"
-          placeholder="+49 123 456789"
-        />
-      </div>
-
-      <div>
-        <label className="text-sm font-medium mb-1 block">
-          Lebenslauf (PDF) *
-        </label>
-        <input
-          type="file"
-          accept=".pdf"
-          required
-          onChange={handleFileChange}
-          className="w-full px-3 py-2 border rounded-md bg-background file:mr-4 file:py-1 file:px-2 file:rounded file:border-0 file:bg-primary file:text-primary-foreground file:text-sm file:cursor-pointer"
-        />
-      </div>
-
-      <div>
-        <label className="text-sm font-medium mb-1 block">
-          Anschreiben (optional)
-        </label>
-        <textarea
-          rows={4}
-          value={formData.message || ''}
-          onChange={(e) =>
-            setFormData({ ...formData, message: e.target.value })
-          }
-          className="w-full px-3 py-2 border rounded-md bg-background resize-none"
-          placeholder="Kurze Nachricht an uns..."
-        />
+        <div>
+          <label className="text-sm font-medium mb-1 block">
+            Lebenslauf (PDF) *
+          </label>
+          <input
+            type="file"
+            accept=".pdf"
+            required
+            onChange={handleFileChange}
+            className="w-full px-3 py-2 border rounded-md bg-background file:mr-4 file:py-1 file:px-2 file:rounded file:border-0 file:bg-primary file:text-primary-foreground file:text-sm file:cursor-pointer"
+          />
+        </div>
       </div>
 
       <Button type="submit" disabled={isSubmitting} className="w-full">

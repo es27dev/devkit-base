@@ -1,18 +1,18 @@
 // Job detail dialog - shows full job description with application form
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/base/dialog';
+} from "@/components/base/dialog";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/base/accordion';
-import { QuickApplicationForm } from '@/components/features/quick-application-form/quick-application-form';
+} from "@/components/base/accordion";
+import { QuickApplicationForm } from "@/components/features/quick-application-form/quick-application-form";
 
 // Types
 export interface JobDetailDialogProps {
@@ -48,7 +48,7 @@ export function JobDetailDialog({
     : null;
 
   // 4. EARLY RETURNS
-  if (!jobData || typeof jobData !== 'object') {
+  if (!jobData || typeof jobData !== "object") {
     return null;
   }
 
@@ -133,7 +133,7 @@ export function JobDetailDialog({
           </Accordion>
 
           {/* Quick Application Form */}
-          <div className="mt-8 pt-8 border-t">
+          <div className="mt-8 pt-8">
             <h3 className="text-lg font-semibold mb-4">Jetzt bewerben</h3>
             <QuickApplicationForm
               jobTitle={jobData.title}
