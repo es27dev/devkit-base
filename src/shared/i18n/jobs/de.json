@@ -1,0 +1,242 @@
+{
+  "jobs": {
+    "haustechniker-frankfurt": {
+      "id": "job-001",
+      "title": "Haustechniker (m/w/d) in Frankfurt am Main",
+      "location": "Frankfurt am Main",
+      "startDate": "ab sofort",
+      "employmentType": "Vollzeit",
+      "tasks": [
+        "Wartungs- und kleine Instandsetzungsarbeiten an technischen Anlagen",
+        "Durchführung von Kleinstinstandsetzungen",
+        "Ansprechpartner für die Mitarbeiter des Kunden und Ihrer Kollegen im Objekt",
+        "Koordinierung und Kontrolle von Nachunternehmern",
+        "Überwachung der Ordnung und des einwandfreien Gesamtzustandes der betreuten Liegenschaft"
+      ],
+      "requirements": [
+        "Abgeschlossene, technische Ausbildung im Bereich der Gebäudetechnik (z.B. Sanitär-, Heizungs-, Klima- oder Elektrotechnik)",
+        "Mehrjährige Berufserfahrung",
+        "Hohe Service- und Dienstleistungsorientierung",
+        "Engagierter Arbeitsstil in Verbindung mit Kommunikationsfähigkeit",
+        "Gute Deutschkenntnisse gepaart mit Zuverlässigkeit und Teamgeist",
+        "Führerschein Klasse B",
+        "EDV-Kenntnisse (insbesondere MS-Office, CAFM wünschenswert)"
+      ],
+      "benefits": [
+        "Ein attraktives Vergütungspaket mit 30 Tagen Urlaub, Weihnachten und Silvester frei sowie Sonderurlaubstage",
+        "Moderne Arbeitskleidung und Werkzeugausstattung",
+        "Abwechslungsreiches Arbeitsumfeld mit Gestaltungspielraum",
+        "Attraktive berufliche Perspektiven und gezielte Aus- und Weiterbildungsmaßnahmen",
+        "Echte Teamarbeit, offene Türen und hilfsbereite Kollegen",
+        "Vermögenswirksame Leistungen und Zuschuss zur betrieblichen Altersvorsorge",
+        "Jobticket- und Fitnesszuschuss",
+        "Freie Getränke (Wasser, Kaffee, Tee) im Büro",
+        "Firmenfeiern und Sommerfest mit Familienmitgliedern"
+      ]
+    },
+    "haustechniker-berlin": {
+      "id": "job-002",
+      "title": "Haustechniker (m/w/d) in Berlin",
+      "location": "Berlin",
+      "startDate": "ab sofort",
+      "employmentType": "Vollzeit",
+      "tasks": [
+        "Wartungs- und kleine Instandsetzungsarbeiten an technischen Anlagen",
+        "Durchführung von Kleinstinstandsetzungen",
+        "Ansprechpartner für die Mitarbeiter des Kunden und Ihrer Kollegen im Objekt",
+        "Koordinierung und Kontrolle von Nachunternehmern",
+        "Überwachung der Ordnung und des einwandfreien Gesamtzustandes der betreuten Liegenschaft"
+      ],
+      "requirements": [
+        "Abgeschlossene, technische Ausbildung im Bereich der Gebäudetechnik (z.B. Sanitär-, Heizungs-, Klima- oder Elektrotechnik)",
+        "Mehrjährige Berufserfahrung",
+        "Hohe Service- und Dienstleistungsorientierung",
+        "Engagierter Arbeitsstil in Verbindung mit Kommunikationsfähigkeit",
+        "Gute Deutschkenntnisse gepaart mit Zuverlässigkeit und Teamgeist",
+        "Führerschein Klasse B",
+        "EDV-Kenntnisse (insbesondere MS-Office, CAFM wünschenswert)"
+      ],
+      "benefits": [
+        "Ein attraktives Vergütungspaket mit 30 Tagen Urlaub, Weihnachten und Silvester frei sowie Sonderurlaubstage",
+        "Moderne Arbeitskleidung und Werkzeugausstattung",
+        "Abwechslungsreiches Arbeitsumfeld mit Gestaltungspielraum",
+        "Attraktive berufliche Perspektiven und gezielte Aus- und Weiterbildungsmaßnahmen",
+        "Echte Teamarbeit, offene Türen und hilfsbereite Kollegen",
+        "Vermögenswirksame Leistungen und Zuschuss zur betrieblichen Altersvorsorge",
+        "Jobticket- und Fitnesszuschuss",
+        "Freie Getränke (Wasser, Kaffee, Tee) im Büro",
+        "Firmenfeiern und Sommerfest mit Familienmitgliedern"
+      ]
+    },
+    "haustechniker-heidelberg": {
+      "id": "job-003",
+      "title": "Haustechniker (m/w/d) in Heidelberg",
+      "location": "Heidelberg",
+      "startDate": "ab sofort",
+      "employmentType": "Vollzeit",
+      "tasks": [
+        "Wartungs- und kleine Instandsetzungsarbeiten an technischen Anlagen",
+        "Durchführung von Kleinstinstandsetzungen",
+        "Ansprechpartner für die Mitarbeiter des Kunden und Ihrer Kollegen im Objekt",
+        "Koordinierung und Kontrolle von Nachunternehmern",
+        "Überwachung der Ordnung und des einwandfreien Gesamtzustandes der betreuten Liegenschaft"
+      ],
+      "requirements": [
+        "Abgeschlossene, technische Ausbildung im Bereich der Gebäudetechnik (z.B. Sanitär-, Heizungs-, Klima- oder Elektrotechnik)",
+        "Mehrjährige Berufserfahrung",
+        "Hohe Service- und Dienstleistungsorientierung",
+        "Engagierter Arbeitsstil in Verbindung mit Kommunikationsfähigkeit",
+        "Gute Deutschkenntnisse gepaart mit Zuverlässigkeit und Teamgeist",
+        "Führerschein Klasse B",
+        "EDV-Kenntnisse (insbesondere MS-Office, CAFM wünschenswert)"
+      ],
+      "benefits": [
+        "Ein attraktives Vergütungspaket mit 30 Tagen Urlaub, Weihnachten und Silvester frei sowie Sonderurlaubstage",
+        "Moderne Arbeitskleidung und Werkzeugausstattung",
+        "Abwechslungsreiches Arbeitsumfeld mit Gestaltungspielraum",
+        "Attraktive berufliche Perspektiven und gezielte Aus- und Weiterbildungsmaßnahmen",
+        "Echte Teamarbeit, offene Türen und hilfsbereite Kollegen",
+        "Vermögenswirksame Leistungen und Zuschuss zur betrieblichen Altersvorsorge",
+        "Jobticket- und Fitnesszuschuss",
+        "Freie Getränke (Wasser, Kaffee, Tee) im Büro",
+        "Firmenfeiern und Sommerfest mit Familienmitgliedern"
+      ]
+    },
+    "haustechniker-heilbronn": {
+      "id": "job-004",
+      "title": "Haustechniker (m/w/d) in Heilbronn",
+      "location": "Heilbronn",
+      "startDate": "ab sofort",
+      "employmentType": "Vollzeit",
+      "tasks": [
+        "Wartungs- und kleine Instandsetzungsarbeiten an technischen Anlagen",
+        "Durchführung von Kleinstinstandsetzungen",
+        "Ansprechpartner für die Mitarbeiter des Kunden und Ihrer Kollegen im Objekt",
+        "Koordinierung und Kontrolle von Nachunternehmern",
+        "Überwachung der Ordnung und des einwandfreien Gesamtzustandes der betreuten Liegenschaft"
+      ],
+      "requirements": [
+        "Abgeschlossene, technische Ausbildung im Bereich der Gebäudetechnik (z.B. Sanitär-, Heizungs-, Klima- oder Elektrotechnik)",
+        "Mehrjährige Berufserfahrung",
+        "Hohe Service- und Dienstleistungsorientierung",
+        "Engagierter Arbeitsstil in Verbindung mit Kommunikationsfähigkeit",
+        "Gute Deutschkenntnisse gepaart mit Zuverlässigkeit und Teamgeist",
+        "Führerschein Klasse B",
+        "EDV-Kenntnisse (insbesondere MS-Office, CAFM wünschenswert)"
+      ],
+      "benefits": [
+        "Ein attraktives Vergütungspaket mit 30 Tagen Urlaub, Weihnachten und Silvester frei sowie Sonderurlaubstage",
+        "Moderne Arbeitskleidung und Werkzeugausstattung",
+        "Abwechslungsreiches Arbeitsumfeld mit Gestaltungspielraum",
+        "Attraktive berufliche Perspektiven und gezielte Aus- und Weiterbildungsmaßnahmen",
+        "Echte Teamarbeit, offene Türen und hilfsbereite Kollegen",
+        "Vermögenswirksame Leistungen und Zuschuss zur betrieblichen Altersvorsorge",
+        "Jobticket- und Fitnesszuschuss",
+        "Freie Getränke (Wasser, Kaffee, Tee) im Büro",
+        "Firmenfeiern und Sommerfest mit Familienmitgliedern"
+      ]
+    },
+    "haustechniker-leipzig": {
+      "id": "job-005",
+      "title": "Haustechniker (m/w/d) in Leipzig",
+      "location": "Leipzig",
+      "startDate": "ab sofort",
+      "employmentType": "Vollzeit",
+      "tasks": [
+        "Wartungs- und kleine Instandsetzungsarbeiten an technischen Anlagen",
+        "Durchführung von Kleinstinstandsetzungen",
+        "Ansprechpartner für die Mitarbeiter des Kunden und Ihrer Kollegen im Objekt",
+        "Koordinierung und Kontrolle von Nachunternehmern",
+        "Überwachung der Ordnung und des einwandfreien Gesamtzustandes der betreuten Liegenschaft"
+      ],
+      "requirements": [
+        "Abgeschlossene, technische Ausbildung im Bereich der Gebäudetechnik (z.B. Sanitär-, Heizungs-, Klima- oder Elektrotechnik)",
+        "Mehrjährige Berufserfahrung",
+        "Hohe Service- und Dienstleistungsorientierung",
+        "Engagierter Arbeitsstil in Verbindung mit Kommunikationsfähigkeit",
+        "Gute Deutschkenntnisse gepaart mit Zuverlässigkeit und Teamgeist",
+        "Führerschein Klasse B",
+        "EDV-Kenntnisse (insbesondere MS-Office, CAFM wünschenswert)"
+      ],
+      "benefits": [
+        "Ein attraktives Vergütungspaket mit 30 Tagen Urlaub, Weihnachten und Silvester frei sowie Sonderurlaubstage",
+        "Moderne Arbeitskleidung und Werkzeugausstattung",
+        "Abwechslungsreiches Arbeitsumfeld mit Gestaltungspielraum",
+        "Attraktive berufliche Perspektiven und gezielte Aus- und Weiterbildungsmaßnahmen",
+        "Echte Teamarbeit, offene Türen und hilfsbereite Kollegen",
+        "Vermögenswirksame Leistungen und Zuschuss zur betrieblichen Altersvorsorge",
+        "Jobticket- und Fitnesszuschuss",
+        "Freie Getränke (Wasser, Kaffee, Tee) im Büro",
+        "Firmenfeiern und Sommerfest mit Familienmitgliedern"
+      ]
+    },
+    "haustechniker-mannheim": {
+      "id": "job-006",
+      "title": "Haustechniker (m/w/d) in Mannheim",
+      "location": "Mannheim",
+      "startDate": "ab sofort",
+      "employmentType": "Vollzeit",
+      "tasks": [
+        "Wartungs- und kleine Instandsetzungsarbeiten an technischen Anlagen",
+        "Durchführung von Kleinstinstandsetzungen",
+        "Ansprechpartner für die Mitarbeiter des Kunden und Ihrer Kollegen im Objekt",
+        "Koordinierung und Kontrolle von Nachunternehmern",
+        "Überwachung der Ordnung und des einwandfreien Gesamtzustandes der betreuten Liegenschaft"
+      ],
+      "requirements": [
+        "Abgeschlossene, technische Ausbildung im Bereich der Gebäudetechnik (z.B. Sanitär-, Heizungs-, Klima- oder Elektrotechnik)",
+        "Mehrjährige Berufserfahrung",
+        "Hohe Service- und Dienstleistungsorientierung",
+        "Engagierter Arbeitsstil in Verbindung mit Kommunikationsfähigkeit",
+        "Gute Deutschkenntnisse gepaart mit Zuverlässigkeit und Teamgeist",
+        "Führerschein Klasse B",
+        "EDV-Kenntnisse (insbesondere MS-Office, CAFM wünschenswert)"
+      ],
+      "benefits": [
+        "Ein attraktives Vergütungspaket mit 30 Tagen Urlaub, Weihnachten und Silvester frei sowie Sonderurlaubstage",
+        "Moderne Arbeitskleidung und Werkzeugausstattung",
+        "Abwechslungsreiches Arbeitsumfeld mit Gestaltungspielraum",
+        "Attraktive berufliche Perspektiven und gezielte Aus- und Weiterbildungsmaßnahmen",
+        "Echte Teamarbeit, offene Türen und hilfsbereite Kollegen",
+        "Vermögenswirksame Leistungen und Zuschuss zur betrieblichen Altersvorsorge",
+        "Jobticket- und Fitnesszuschuss",
+        "Freie Getränke (Wasser, Kaffee, Tee) im Büro",
+        "Firmenfeiern und Sommerfest mit Familienmitgliedern"
+      ]
+    },
+    "haustechniker-wiesbaden": {
+      "id": "job-007",
+      "title": "Haustechniker (m/w/d) in Wiesbaden",
+      "location": "Wiesbaden",
+      "startDate": "ab sofort",
+      "employmentType": "Vollzeit",
+      "tasks": [
+        "Wartungs- und kleine Instandsetzungsarbeiten an technischen Anlagen",
+        "Durchführung von Kleinstinstandsetzungen",
+        "Ansprechpartner für die Mitarbeiter des Kunden und Ihrer Kollegen im Objekt",
+        "Koordinierung und Kontrolle von Nachunternehmern",
+        "Überwachung der Ordnung und des einwandfreien Gesamtzustandes der betreuten Liegenschaft"
+      ],
+      "requirements": [
+        "Abgeschlossene, technische Ausbildung im Bereich der Gebäudetechnik (z.B. Sanitär-, Heizungs-, Klima- oder Elektrotechnik)",
+        "Mehrjährige Berufserfahrung",
+        "Hohe Service- und Dienstleistungsorientierung",
+        "Engagierter Arbeitsstil in Verbindung mit Kommunikationsfähigkeit",
+        "Gute Deutschkenntnisse gepaart mit Zuverlässigkeit und Teamgeist",
+        "Führerschein Klasse B",
+        "EDV-Kenntnisse (insbesondere MS-Office, CAFM wünschenswert)"
+      ],
+      "benefits": [
+        "Ein attraktives Vergütungspaket mit 30 Tagen Urlaub, Weihnachten und Silvester frei sowie Sonderurlaubstage",
+        "Moderne Arbeitskleidung und Werkzeugausstattung",
+        "Abwechslungsreiches Arbeitsumfeld mit Gestaltungspielraum",
+        "Attraktive berufliche Perspektiven und gezielte Aus- und Weiterbildungsmaßnahmen",
+        "Echte Teamarbeit, offene Türen und hilfsbereite Kollegen",
+        "Vermögenswirksame Leistungen und Zuschuss zur betrieblichen Altersvorsorge",
+        "Jobticket- und Fitnesszuschuss",
+        "Freie Getränke (Wasser, Kaffee, Tee) im Büro",
+        "Firmenfeiern und Sommerfest mit Familienmitgliedern"
+      ]
+    }
+  }
+}

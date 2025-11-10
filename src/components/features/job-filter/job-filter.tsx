@@ -39,9 +39,13 @@ export function JobFilter({ selectedLocation, onLocationChange }: JobFilterProps
   // Computed Data
   const locationOptions: { value: LocationFilter; label: string }[] = [
     { value: "Alle", label: t("jobFilter.locationAll") },
-    { value: "Heidelberg", label: "Heidelberg" },
     { value: "Berlin", label: "Berlin" },
-    { value: "Hamburg", label: "Hamburg" },
+    { value: "Frankfurt am Main", label: "Frankfurt am Main" },
+    { value: "Heidelberg", label: "Heidelberg" },
+    { value: "Heilbronn", label: "Heilbronn" },
+    { value: "Leipzig", label: "Leipzig" },
+    { value: "Mannheim", label: "Mannheim" },
+    { value: "Wiesbaden", label: "Wiesbaden" },
   ];
 
   // Event Handlers

@@ -7,7 +7,7 @@ export const contactFormSchema = z.object({
   email: z.string().email("Bitte gültige E-Mail angeben"),
   phone: z.string().optional(),
   company: z.string().optional(),
-  location: z.enum(["Berlin", "Hamburg", "Heidelberg", "anderes"]),
+  location: z.enum(["Berlin", "Frankfurt am Main", "Heidelberg", "Heilbronn", "Leipzig", "Mannheim", "Wiesbaden", "anderes"]),
   areaOfUse: z
     .enum([
       "Technisches FM",
@@ -50,7 +50,7 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 export type JobApplicationData = z.infer<typeof jobApplicationSchema>;
 
 // Location type for consistency
-export type Location = "Berlin" | "Hamburg" | "Heidelberg" | "anderes";
+export type Location = "Berlin" | "Frankfurt am Main" | "Heidelberg" | "Heilbronn" | "Leipzig" | "Mannheim" | "Wiesbaden" | "anderes";
 export type LocationFilter = "Alle" | Location;
 
 // Form state type

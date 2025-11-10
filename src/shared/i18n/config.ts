@@ -15,6 +15,9 @@ import contactFormDe from "@/components/features/contact-form/i18n/locales/de.js
 import applicationFormDe from "@/components/features/application-form/i18n/locales/de.json";
 import jobFilterDe from "@/components/features/job-filter/i18n/locales/de.json";
 
+// Jobs Translations
+import jobsDe from "@/shared/i18n/jobs/de.json";
+
 // Merge all translations into one flat object
 const mergedDe = {
   ...commonDe,
@@ -24,6 +27,7 @@ const mergedDe = {
   ...contactFormDe,
   ...applicationFormDe,
   ...jobFilterDe,
+  ...jobsDe,
 };
 
 i18n.use(initReactI18next).init({

@@ -11,6 +11,7 @@ import { JobFilter } from "@/components/features/job-filter/job-filter";
 import { JobListing } from "@/components/blocks/job-listing/job-listing";
 import { TeamSection } from "@/components/blocks/team-section/team-section";
 import { ApplicationForm } from "@/components/features/application-form/application-form";
+import { JobDetailDialog } from "@/components/features/job-detail-dialog/job-detail-dialog";
 import { CTASection } from "@/components/blocks/cta-section/cta-section";
 import { HeroCounter } from "@/components/blocks/hero/HeroCounter";
 
@@ -47,6 +48,8 @@ export function Career() {
   const [searchParams] = useSearchParams();
   const [selectedLocation, setSelectedLocation] = useState<LocationFilter>("Alle");
   const [prefilledJobTitle, setPrefilledJobTitle] = useState("");
+  const [jobDetailDialogOpen, setJobDetailDialogOpen] = useState(false);
+  const [selectedJobKey, setSelectedJobKey] = useState<string | null>(null);
   const { setAnchors, setActiveAnchorId } = usePageAnchors();
 
   // Translations
@@ -70,7 +73,10 @@ export function Career() {
   // Computed Data
   const filteredJobs = mockJobListings.filter(job => {
     if (selectedLocation === "Alle") return job.active;
-    return job.active && job.location === selectedLocation;
+
+    // Load job data from i18n to get location
+    const jobData = t(`jobs.${job.i18nKey}`, { returnObjects: true }) as { location: string };
+    return job.active && jobData?.location === selectedLocation;
   });
 
   const sortedBenefits = mockBenefits.sort((a, b) => a.displayOrder - b.displayOrder);
@@ -92,6 +98,20 @@ export function Career() {
 
   const handleScrollToApplication = () => {
     document.getElementById('bewerben')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleViewJobDetails = (jobI18nKey: string) => {
+    setSelectedJobKey(jobI18nKey);
+    setJobDetailDialogOpen(true);
+  };
+
+  const handleJobApplyFromDialog = (jobTitle: string) => {
+    setPrefilledJobTitle(jobTitle);
+    setJobDetailDialogOpen(false);
+    // Scroll to application form
+    setTimeout(() => {
+      document.getElementById('bewerben')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
 
   // Effects
@@ -195,6 +215,7 @@ export function Career() {
                 <JobListing
                   key={job.id}
                   job={job}
+                  onViewDetails={handleViewJobDetails}
                   onApply={handleJobApply}
                 />
               ))}
@@ -297,6 +318,14 @@ export function Career() {
             href: "/about"
           }
         ]}
+      />
+
+      {/* Job Detail Dialog */}
+      <JobDetailDialog
+        jobI18nKey={selectedJobKey}
+        open={jobDetailDialogOpen}
+        onOpenChange={setJobDetailDialogOpen}
+        onApply={handleJobApplyFromDialog}
       />
     </div>
   );
