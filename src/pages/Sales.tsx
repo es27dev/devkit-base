@@ -9,7 +9,7 @@ import { Button } from "@/components/base/button";
 import { Card, CardContent } from "@/components/base/card";
 
 // Block Components
-import { CTACard } from "@/components/blocks/cta-card/cta-card";
+import { CTASection } from "@/components/blocks/cta-section/cta-section";
 import { HeroBuilder } from "@/components/blocks/hero/HeroBuilder";
 
 // Mock Data
@@ -227,24 +227,24 @@ export function Sales() {
       </section>
 
       {/* CTA Cards Section - T055 */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <CTACard
-            title="Arbeiten bei pacon"
-            description="Entdecken Sie spannende Karrierechancen in unserem Team"
-            buttonText="Stellenausschreibungen"
-            href="/career"
-            variant="primary"
-          />
-          <CTACard
-            title="Über pacon"
-            description="Erfahren Sie mehr über unser Unternehmen und unsere Werte"
-            buttonText="Mehr erfahren"
-            href="/about"
-            variant="secondary"
-          />
-        </div>
-      </section>
+      <CTASection
+        items={[
+          {
+            title: "Arbeiten bei pacon",
+            description: "Entdecken Sie spannende Karrierechancen in unserem Team",
+            buttonText: "Stellenausschreibungen",
+            href: "/career",
+            variant: "primary"
+          },
+          {
+            title: "Über pacon",
+            description: "Erfahren Sie mehr über unser Unternehmen und unsere Werte",
+            buttonText: "Mehr erfahren",
+            href: "/about",
+            variant: "secondary"
+          }
+        ]}
+      />
     </div>
   );
 }

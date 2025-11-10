@@ -11,7 +11,7 @@ import { JobFilter } from "@/components/features/job-filter/job-filter";
 import { JobListing } from "@/components/blocks/job-listing/job-listing";
 import { TeamSection } from "@/components/blocks/team-section/team-section";
 import { ApplicationForm } from "@/components/features/application-form/application-form";
-import { CTACard } from "@/components/blocks/cta-card/cta-card";
+import { CTASection } from "@/components/blocks/cta-section/cta-section";
 import { HeroCounter } from "@/components/blocks/hero/HeroCounter";
 
 // Data
@@ -273,31 +273,31 @@ export function Career() {
       </section>
 
       {/* CTA Cards Section - T096 */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <CTACard
-            title={t("career.ctaApplicationTitle")}
-            description={t("career.ctaApplicationDescription")}
-            buttonText={t("career.ctaApplicationButton")}
-            variant="primary"
-            href="#bewerben"
-          />
-          <CTACard
-            title={t("career.ctaInitiativeTitle")}
-            description={t("career.ctaInitiativeDescription")}
-            buttonText={t("career.ctaInitiativeButton")}
-            variant="secondary"
-            href="#bewerben"
-          />
-          <CTACard
-            title={t("career.ctaAboutTitle")}
-            description={t("career.ctaAboutDescription")}
-            buttonText={t("career.ctaAboutButton")}
-            variant="secondary"
-            href="/about"
-          />
-        </div>
-      </section>
+      <CTASection
+        items={[
+          {
+            title: t("career.ctaApplicationTitle"),
+            description: t("career.ctaApplicationDescription"),
+            buttonText: t("career.ctaApplicationButton"),
+            variant: "primary",
+            href: "#bewerben"
+          },
+          {
+            title: t("career.ctaInitiativeTitle"),
+            description: t("career.ctaInitiativeDescription"),
+            buttonText: t("career.ctaInitiativeButton"),
+            variant: "secondary",
+            href: "#bewerben"
+          },
+          {
+            title: t("career.ctaAboutTitle"),
+            description: t("career.ctaAboutDescription"),
+            buttonText: t("career.ctaAboutButton"),
+            variant: "secondary",
+            href: "/about"
+          }
+        ]}
+      />
     </div>
   );
 }

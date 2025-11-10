@@ -8,7 +8,7 @@ import { HeroSection } from "@/components/blocks/hero-section/hero-section";
 import { ServiceCard } from "@/components/blocks/service-card/service-card";
 import { CustomerLogoWall } from "@/components/blocks/customer-logo-wall/customer-logo-wall";
 import { ProjectGallery } from "@/components/blocks/project-gallery/project-gallery";
-import { CTACard } from "@/components/blocks/cta-card/cta-card";
+import { CTASection } from "@/components/blocks/cta-section/cta-section";
 
 // Mock Data
 import { mockServices } from "@/shared/data/mock-services";
@@ -200,33 +200,31 @@ export function Main() {
       </section>
 
       {/* T036: Three CTA cards at page end linking to /sales, /career, and /about */}
-      <section className="px-6 py-16">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            <CTACard
-              title={t("main.cta.sales.title")}
-              description={t("main.cta.sales.description")}
-              buttonText={t("main.cta.sales.button")}
-              href="/sales"
-              variant="primary"
-            />
-            <CTACard
-              title={t("main.cta.career.title")}
-              description={t("main.cta.career.description")}
-              buttonText={t("main.cta.career.button")}
-              href="/career"
-              variant="secondary"
-            />
-            <CTACard
-              title={t("main.cta.about.title")}
-              description={t("main.cta.about.description")}
-              buttonText={t("main.cta.about.button")}
-              href="/about"
-              variant="secondary"
-            />
-          </div>
-        </div>
-      </section>
+      <CTASection
+        items={[
+          {
+            title: t("main.cta.sales.title"),
+            description: t("main.cta.sales.description"),
+            buttonText: t("main.cta.sales.button"),
+            href: "/sales",
+            variant: "primary"
+          },
+          {
+            title: t("main.cta.career.title"),
+            description: t("main.cta.career.description"),
+            buttonText: t("main.cta.career.button"),
+            href: "/career",
+            variant: "secondary"
+          },
+          {
+            title: t("main.cta.about.title"),
+            description: t("main.cta.about.description"),
+            buttonText: t("main.cta.about.button"),
+            href: "/about",
+            variant: "secondary"
+          }
+        ]}
+      />
     </div>
   );
 }

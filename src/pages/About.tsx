@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { CustomerLogoWall } from '@/components/blocks/customer-logo-wall/customer-logo-wall';
 import { ProjectGallery } from '@/components/blocks/project-gallery/project-gallery';
 import { TestimonialSlider } from '@/components/blocks/testimonial-slider/testimonial-slider';
-import { CTACard } from '@/components/blocks/cta-card/cta-card';
+import { CTASection } from '@/components/blocks/cta-section/cta-section';
 import { HeroCounter } from '@/components/blocks/hero/HeroCounter';
 
 // Data
@@ -264,31 +264,31 @@ export function About() {
       </section>
 
       {/* T069: CTA Cards Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <CTACard
-            title={t('about.cta.sales.title')}
-            description={t('about.cta.sales.description')}
-            buttonText="Angebot anfordern"
-            href="/sales"
-            variant="primary"
-          />
-          <CTACard
-            title={t('about.cta.career.title')}
-            description={t('about.cta.career.description')}
-            buttonText="Karriere entdecken"
-            href="/career"
-            variant="secondary"
-          />
-          <CTACard
-            title={t('about.cta.contact.title')}
-            description={t('about.cta.contact.description')}
-            buttonText="Kontakt aufnehmen"
-            href="/contact"
-            variant="secondary"
-          />
-        </div>
-      </section>
+      <CTASection
+        items={[
+          {
+            title: t('about.cta.sales.title'),
+            description: t('about.cta.sales.description'),
+            buttonText: "Angebot anfordern",
+            href: "/sales",
+            variant: "primary"
+          },
+          {
+            title: t('about.cta.career.title'),
+            description: t('about.cta.career.description'),
+            buttonText: "Karriere entdecken",
+            href: "/career",
+            variant: "secondary"
+          },
+          {
+            title: t('about.cta.contact.title'),
+            description: t('about.cta.contact.description'),
+            buttonText: "Kontakt aufnehmen",
+            href: "/contact",
+            variant: "secondary"
+          }
+        ]}
+      />
     </div>
   );
 }
